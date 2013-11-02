@@ -47,6 +47,10 @@ int filterActive = 0;
 	int gridCellHorizontalMod = 50;
 	int gridCellVerticalMod = 0;
 	
+	if( self.view.frame.size.height > 480){
+		gridCellVerticalMod = 50;
+	}
+	
 	int gridCellCountVertical = 0;
 	while (gridCellCountVertical < 19) {
 		int gridCellCountHorizontal = 0;
