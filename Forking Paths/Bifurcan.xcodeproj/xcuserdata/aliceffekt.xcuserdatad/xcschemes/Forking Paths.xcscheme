@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "03EE74461824CAE700AB60C0"
                BuildableName = "Forking Paths.app"
-               BlueprintName = "Forking Paths"
-               ReferencedContainer = "container:Forking Paths.xcodeproj">
+               BlueprintName = "Bifurcan"
+               ReferencedContainer = "container:Bifurcan.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "03EE74671824CAE700AB60C0"
                BuildableName = "Forking PathsTests.xctest"
-               BlueprintName = "Forking PathsTests"
-               ReferencedContainer = "container:Forking Paths.xcodeproj">
+               BlueprintName = "BifurcanTests"
+               ReferencedContainer = "container:Bifurcan.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "03EE74461824CAE700AB60C0"
             BuildableName = "Forking Paths.app"
-            BlueprintName = "Forking Paths"
-            ReferencedContainer = "container:Forking Paths.xcodeproj">
+            BlueprintName = "Bifurcan"
+            ReferencedContainer = "container:Bifurcan.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "03EE74461824CAE700AB60C0"
             BuildableName = "Forking Paths.app"
-            BlueprintName = "Forking Paths"
-            ReferencedContainer = "container:Forking Paths.xcodeproj">
+            BlueprintName = "Bifurcan"
+            ReferencedContainer = "container:Bifurcan.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "03EE74461824CAE700AB60C0"
             BuildableName = "Forking Paths.app"
-            BlueprintName = "Forking Paths"
-            ReferencedContainer = "container:Forking Paths.xcodeproj">
+            BlueprintName = "Bifurcan"
+            ReferencedContainer = "container:Bifurcan.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

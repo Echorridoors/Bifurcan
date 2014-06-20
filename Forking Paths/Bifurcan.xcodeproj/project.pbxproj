@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03C8CD131954757B00E3E267 /* click.fast.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD0C1954757B00E3E267 /* click.fast.wav */; };
+		03C8CD141954757B00E3E267 /* click.high.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD0D1954757B00E3E267 /* click.high.wav */; };
+		03C8CD151954757B00E3E267 /* click.low.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD0E1954757B00E3E267 /* click.low.wav */; };
+		03C8CD161954757B00E3E267 /* segueFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C8CD101954757B00E3E267 /* segueFade.m */; };
+		03C8CD171954757B00E3E267 /* splash.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C8CD121954757B00E3E267 /* splash.m */; };
+		03C8CD191954759600E3E267 /* splash.xxiivv.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD181954759600E3E267 /* splash.xxiivv.png */; };
+		03C8CD1B195476CE00E3E267 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C8CD1A195476CE00E3E267 /* AVFoundation.framework */; };
+		03C8CD1D195476D400E3E267 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C8CD1C195476D400E3E267 /* AudioToolbox.framework */; };
 		03EE744B1824CAE700AB60C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EE744A1824CAE700AB60C0 /* Foundation.framework */; };
 		03EE744D1824CAE700AB60C0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EE744C1824CAE700AB60C0 /* CoreGraphics.framework */; };
 		03EE744F1824CAE700AB60C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EE744E1824CAE700AB60C0 /* UIKit.framework */; };
@@ -36,23 +44,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03EE74471824CAE700AB60C0 /* Forking Paths.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Forking Paths.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03C8CD0C1954757B00E3E267 /* click.fast.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.fast.wav; sourceTree = "<group>"; };
+		03C8CD0D1954757B00E3E267 /* click.high.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.high.wav; sourceTree = "<group>"; };
+		03C8CD0E1954757B00E3E267 /* click.low.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.low.wav; sourceTree = "<group>"; };
+		03C8CD0F1954757B00E3E267 /* segueFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segueFade.h; sourceTree = "<group>"; };
+		03C8CD101954757B00E3E267 /* segueFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = segueFade.m; sourceTree = "<group>"; };
+		03C8CD111954757B00E3E267 /* splash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splash.h; sourceTree = "<group>"; };
+		03C8CD121954757B00E3E267 /* splash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splash.m; sourceTree = "<group>"; };
+		03C8CD181954759600E3E267 /* splash.xxiivv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.xxiivv.png; sourceTree = "<group>"; };
+		03C8CD1A195476CE00E3E267 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		03C8CD1C195476D400E3E267 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		03EE74471824CAE700AB60C0 /* Bifurcan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bifurcan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03EE744A1824CAE700AB60C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		03EE744C1824CAE700AB60C0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		03EE744E1824CAE700AB60C0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		03EE74521824CAE700AB60C0 /* Forking Paths-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Forking Paths-Info.plist"; sourceTree = "<group>"; };
+		03EE74521824CAE700AB60C0 /* Bifurcan-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bifurcan-Info.plist"; sourceTree = "<group>"; };
 		03EE74541824CAE700AB60C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		03EE74561824CAE700AB60C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		03EE74581824CAE700AB60C0 /* Forking Paths-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Forking Paths-Prefix.pch"; sourceTree = "<group>"; };
+		03EE74581824CAE700AB60C0 /* Bifurcan-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bifurcan-Prefix.pch"; sourceTree = "<group>"; };
 		03EE74591824CAE700AB60C0 /* xxiivvAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xxiivvAppDelegate.h; sourceTree = "<group>"; };
 		03EE745A1824CAE700AB60C0 /* xxiivvAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xxiivvAppDelegate.m; sourceTree = "<group>"; };
 		03EE745D1824CAE700AB60C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03EE745F1824CAE700AB60C0 /* xxiivvViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xxiivvViewController.h; sourceTree = "<group>"; };
 		03EE74601824CAE700AB60C0 /* xxiivvViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xxiivvViewController.m; sourceTree = "<group>"; };
 		03EE74621824CAE700AB60C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		03EE74681824CAE700AB60C0 /* Forking PathsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Forking PathsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03EE74681824CAE700AB60C0 /* BifurcanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BifurcanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03EE74691824CAE700AB60C0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		03EE74711824CAE700AB60C0 /* Forking PathsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Forking PathsTests-Info.plist"; sourceTree = "<group>"; };
+		03EE74711824CAE700AB60C0 /* BifurcanTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BifurcanTests-Info.plist"; sourceTree = "<group>"; };
 		03EE74731824CAE700AB60C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		03EE74751824CAE700AB60C0 /* Forking_PathsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Forking_PathsTests.m; sourceTree = "<group>"; };
 		03EE747F1824D69E00AB60C0 /* left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = left.jpg; path = Images.xcassets/left.jpg; sourceTree = "<group>"; };
@@ -64,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C8CD1D195476D400E3E267 /* AudioToolbox.framework in Frameworks */,
+				03C8CD1B195476CE00E3E267 /* AVFoundation.framework in Frameworks */,
 				03EE744D1824CAE700AB60C0 /* CoreGraphics.framework in Frameworks */,
 				03EE744F1824CAE700AB60C0 /* UIKit.framework in Frameworks */,
 				03EE744B1824CAE700AB60C0 /* Foundation.framework in Frameworks */,
@@ -96,8 +116,8 @@
 		03EE74481824CAE700AB60C0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				03EE74471824CAE700AB60C0 /* Forking Paths.app */,
-				03EE74681824CAE700AB60C0 /* Forking PathsTests.xctest */,
+				03EE74471824CAE700AB60C0 /* Bifurcan.app */,
+				03EE74681824CAE700AB60C0 /* BifurcanTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +125,8 @@
 		03EE74491824CAE700AB60C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03C8CD1C195476D400E3E267 /* AudioToolbox.framework */,
+				03C8CD1A195476CE00E3E267 /* AVFoundation.framework */,
 				03EE744A1824CAE700AB60C0 /* Foundation.framework */,
 				03EE744C1824CAE700AB60C0 /* CoreGraphics.framework */,
 				03EE744E1824CAE700AB60C0 /* UIKit.framework */,
@@ -116,6 +138,14 @@
 		03EE74501824CAE700AB60C0 /* Forking Paths */ = {
 			isa = PBXGroup;
 			children = (
+				03C8CD181954759600E3E267 /* splash.xxiivv.png */,
+				03C8CD0C1954757B00E3E267 /* click.fast.wav */,
+				03C8CD0D1954757B00E3E267 /* click.high.wav */,
+				03C8CD0E1954757B00E3E267 /* click.low.wav */,
+				03C8CD0F1954757B00E3E267 /* segueFade.h */,
+				03C8CD101954757B00E3E267 /* segueFade.m */,
+				03C8CD111954757B00E3E267 /* splash.h */,
+				03C8CD121954757B00E3E267 /* splash.m */,
 				03EE74591824CAE700AB60C0 /* xxiivvAppDelegate.h */,
 				03EE745A1824CAE700AB60C0 /* xxiivvAppDelegate.m */,
 				03EE745C1824CAE700AB60C0 /* Main.storyboard */,
@@ -132,10 +162,10 @@
 		03EE74511824CAE700AB60C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03EE74521824CAE700AB60C0 /* Forking Paths-Info.plist */,
+				03EE74521824CAE700AB60C0 /* Bifurcan-Info.plist */,
 				03EE74531824CAE700AB60C0 /* InfoPlist.strings */,
 				03EE74561824CAE700AB60C0 /* main.m */,
-				03EE74581824CAE700AB60C0 /* Forking Paths-Prefix.pch */,
+				03EE74581824CAE700AB60C0 /* Bifurcan-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,7 +182,7 @@
 		03EE74701824CAE700AB60C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03EE74711824CAE700AB60C0 /* Forking PathsTests-Info.plist */,
+				03EE74711824CAE700AB60C0 /* BifurcanTests-Info.plist */,
 				03EE74721824CAE700AB60C0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -161,9 +191,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		03EE74461824CAE700AB60C0 /* Forking Paths */ = {
+		03EE74461824CAE700AB60C0 /* Bifurcan */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03EE74791824CAE700AB60C0 /* Build configuration list for PBXNativeTarget "Forking Paths" */;
+			buildConfigurationList = 03EE74791824CAE700AB60C0 /* Build configuration list for PBXNativeTarget "Bifurcan" */;
 			buildPhases = (
 				03EE74431824CAE700AB60C0 /* Sources */,
 				03EE74441824CAE700AB60C0 /* Frameworks */,
@@ -173,14 +203,14 @@
 			);
 			dependencies = (
 			);
-			name = "Forking Paths";
+			name = Bifurcan;
 			productName = "Forking Paths";
-			productReference = 03EE74471824CAE700AB60C0 /* Forking Paths.app */;
+			productReference = 03EE74471824CAE700AB60C0 /* Bifurcan.app */;
 			productType = "com.apple.product-type.application";
 		};
-		03EE74671824CAE700AB60C0 /* Forking PathsTests */ = {
+		03EE74671824CAE700AB60C0 /* BifurcanTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03EE747C1824CAE700AB60C0 /* Build configuration list for PBXNativeTarget "Forking PathsTests" */;
+			buildConfigurationList = 03EE747C1824CAE700AB60C0 /* Build configuration list for PBXNativeTarget "BifurcanTests" */;
 			buildPhases = (
 				03EE74641824CAE700AB60C0 /* Sources */,
 				03EE74651824CAE700AB60C0 /* Frameworks */,
@@ -191,9 +221,9 @@
 			dependencies = (
 				03EE746E1824CAE700AB60C0 /* PBXTargetDependency */,
 			);
-			name = "Forking PathsTests";
+			name = BifurcanTests;
 			productName = "Forking PathsTests";
-			productReference = 03EE74681824CAE700AB60C0 /* Forking PathsTests.xctest */;
+			productReference = 03EE74681824CAE700AB60C0 /* BifurcanTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -211,7 +241,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 03EE74421824CAE700AB60C0 /* Build configuration list for PBXProject "Forking Paths" */;
+			buildConfigurationList = 03EE74421824CAE700AB60C0 /* Build configuration list for PBXProject "Bifurcan" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -224,8 +254,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03EE74461824CAE700AB60C0 /* Forking Paths */,
-				03EE74671824CAE700AB60C0 /* Forking PathsTests */,
+				03EE74461824CAE700AB60C0 /* Bifurcan */,
+				03EE74671824CAE700AB60C0 /* BifurcanTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,11 +265,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C8CD131954757B00E3E267 /* click.fast.wav in Resources */,
 				03EE74821824D69E00AB60C0 /* right.jpg in Resources */,
 				03EE74631824CAE700AB60C0 /* Images.xcassets in Resources */,
+				03C8CD191954759600E3E267 /* splash.xxiivv.png in Resources */,
+				03C8CD141954757B00E3E267 /* click.high.wav in Resources */,
 				03EE74551824CAE700AB60C0 /* InfoPlist.strings in Resources */,
 				03EE74811824D69E00AB60C0 /* left.jpg in Resources */,
 				03EE745E1824CAE700AB60C0 /* Main.storyboard in Resources */,
+				03C8CD151954757B00E3E267 /* click.low.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +294,9 @@
 			files = (
 				03EE745B1824CAE700AB60C0 /* xxiivvAppDelegate.m in Sources */,
 				03EE74611824CAE700AB60C0 /* xxiivvViewController.m in Sources */,
+				03C8CD171954757B00E3E267 /* splash.m in Sources */,
 				03EE74571824CAE700AB60C0 /* main.m in Sources */,
+				03C8CD161954757B00E3E267 /* segueFade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +313,7 @@
 /* Begin PBXTargetDependency section */
 		03EE746E1824CAE700AB60C0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 03EE74461824CAE700AB60C0 /* Forking Paths */;
+			target = 03EE74461824CAE700AB60C0 /* Bifurcan */;
 			targetProxy = 03EE746D1824CAE700AB60C0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -390,9 +426,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Forking Paths/Forking Paths-Prefix.pch";
-				INFOPLIST_FILE = "Forking Paths/Forking Paths-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Forking Paths/Bifurcan-Prefix.pch";
+				INFOPLIST_FILE = "Forking Paths/Bifurcan-Info.plist";
+				PRODUCT_NAME = Bifurcan;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -403,9 +439,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Forking Paths/Forking Paths-Prefix.pch";
-				INFOPLIST_FILE = "Forking Paths/Forking Paths-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Forking Paths/Bifurcan-Prefix.pch";
+				INFOPLIST_FILE = "Forking Paths/Bifurcan-Info.plist";
+				PRODUCT_NAME = Bifurcan;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -426,8 +462,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Forking PathsTests/Forking PathsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Forking PathsTests/BifurcanTests-Info.plist";
+				PRODUCT_NAME = BifurcanTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -445,8 +481,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Forking Paths/Forking Paths-Prefix.pch";
-				INFOPLIST_FILE = "Forking PathsTests/Forking PathsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Forking PathsTests/BifurcanTests-Info.plist";
+				PRODUCT_NAME = BifurcanTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -455,7 +491,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		03EE74421824CAE700AB60C0 /* Build configuration list for PBXProject "Forking Paths" */ = {
+		03EE74421824CAE700AB60C0 /* Build configuration list for PBXProject "Bifurcan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03EE74771824CAE700AB60C0 /* Debug */,
@@ -464,7 +500,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03EE74791824CAE700AB60C0 /* Build configuration list for PBXNativeTarget "Forking Paths" */ = {
+		03EE74791824CAE700AB60C0 /* Build configuration list for PBXNativeTarget "Bifurcan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03EE747A1824CAE700AB60C0 /* Debug */,
@@ -473,7 +509,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03EE747C1824CAE700AB60C0 /* Build configuration list for PBXNativeTarget "Forking PathsTests" */ = {
+		03EE747C1824CAE700AB60C0 /* Build configuration list for PBXNativeTarget "BifurcanTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03EE747D1824CAE700AB60C0 /* Debug */,

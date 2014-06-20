@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Forking Paths.xcodeproj">
+      location = "self:Bifurcan.xcodeproj">
    </FileRef>
 </Workspace>

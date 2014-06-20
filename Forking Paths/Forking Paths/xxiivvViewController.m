@@ -23,6 +23,7 @@ int filterActive = 0;
 	[self templateGrid];
 	[self templateView];
 	[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeTic) userInfo:nil repeats:YES];
+	[[UIApplication sharedApplication] setIdleTimerDisabled: YES];
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -239,13 +240,14 @@ int filterActive = 0;
 }
 - (IBAction)filterButtonWasClicked:(id)sender {
 	
-	
 	if( filterActive == 1 ){
+		[self playSoundNamed:@"click.fast"];
 		filterActive = 0;
 		[[self.view viewWithTag:0] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"left.jpg"]]];
 		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"left.jpg"]];
 	}
 	else {
+		[self playSoundNamed:@"click.low"];
 		filterActive = 1;
 		self.view.backgroundColor = [UIColor blackColor];
 		[[self.view viewWithTag:0] setBackgroundColor:[UIColor blackColor]];
@@ -261,6 +263,19 @@ int filterActive = 0;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)playSoundNamed:(NSString*)name
+{
+	NSLog(@" AUDIO | Playing sound: %@",name);
+	
+	NSString* audioPath = [[NSBundle mainBundle] pathForResource:name ofType:@"wav"];
+	NSURL* audioUrl = [NSURL fileURLWithPath:audioPath];
+	audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:nil];
+	audioPlayer.volume = 1;
+	[audioPlayer prepareToPlay];
+	[audioPlayer play];
+	
 }
 
 @end

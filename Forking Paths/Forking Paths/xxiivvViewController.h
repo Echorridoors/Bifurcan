@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface xxiivvViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIButton *filterButton;
 
 @end
+
+AVAudioPlayer *audioPlayer;
