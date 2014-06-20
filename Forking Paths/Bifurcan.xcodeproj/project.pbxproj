@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		03B0837419548883003A7DB7 /* ambience.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03B0837319548883003A7DB7 /* ambience.wav */; };
+		03C6F68E1954B0D20012BABA /* segueFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C6F6871954B0D20012BABA /* segueFade.m */; };
+		03C6F68F1954B0D20012BABA /* splash.load.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C6F6881954B0D20012BABA /* splash.load.png */; };
+		03C6F6901954B0D20012BABA /* splash.logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C6F6891954B0D20012BABA /* splash.logo.png */; };
+		03C6F6911954B0D20012BABA /* splash.support.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C6F68A1954B0D20012BABA /* splash.support.png */; };
+		03C6F6921954B0D20012BABA /* splash.tune.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03C6F68B1954B0D20012BABA /* splash.tune.wav */; };
+		03C6F6931954B0D20012BABA /* xxiivvSplash.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C6F68D1954B0D20012BABA /* xxiivvSplash.m */; };
 		03C8CD131954757B00E3E267 /* click.fast.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD0C1954757B00E3E267 /* click.fast.wav */; };
 		03C8CD141954757B00E3E267 /* click.high.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD0D1954757B00E3E267 /* click.high.wav */; };
 		03C8CD151954757B00E3E267 /* click.low.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD0E1954757B00E3E267 /* click.low.wav */; };
-		03C8CD161954757B00E3E267 /* segueFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C8CD101954757B00E3E267 /* segueFade.m */; };
-		03C8CD171954757B00E3E267 /* splash.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C8CD121954757B00E3E267 /* splash.m */; };
 		03C8CD191954759600E3E267 /* splash.xxiivv.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD181954759600E3E267 /* splash.xxiivv.png */; };
 		03C8CD1B195476CE00E3E267 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C8CD1A195476CE00E3E267 /* AVFoundation.framework */; };
 		03C8CD1D195476D400E3E267 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C8CD1C195476D400E3E267 /* AudioToolbox.framework */; };
@@ -47,13 +51,17 @@
 
 /* Begin PBXFileReference section */
 		03B0837319548883003A7DB7 /* ambience.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ambience.wav; sourceTree = "<group>"; };
+		03C6F6861954B0D20012BABA /* segueFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segueFade.h; sourceTree = "<group>"; };
+		03C6F6871954B0D20012BABA /* segueFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = segueFade.m; sourceTree = "<group>"; };
+		03C6F6881954B0D20012BABA /* splash.load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.load.png; sourceTree = "<group>"; };
+		03C6F6891954B0D20012BABA /* splash.logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.logo.png; sourceTree = "<group>"; };
+		03C6F68A1954B0D20012BABA /* splash.support.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.support.png; sourceTree = "<group>"; };
+		03C6F68B1954B0D20012BABA /* splash.tune.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = splash.tune.wav; sourceTree = "<group>"; };
+		03C6F68C1954B0D20012BABA /* xxiivvSplash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvSplash.h; sourceTree = "<group>"; };
+		03C6F68D1954B0D20012BABA /* xxiivvSplash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvSplash.m; sourceTree = "<group>"; };
 		03C8CD0C1954757B00E3E267 /* click.fast.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.fast.wav; sourceTree = "<group>"; };
 		03C8CD0D1954757B00E3E267 /* click.high.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.high.wav; sourceTree = "<group>"; };
 		03C8CD0E1954757B00E3E267 /* click.low.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.low.wav; sourceTree = "<group>"; };
-		03C8CD0F1954757B00E3E267 /* segueFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segueFade.h; sourceTree = "<group>"; };
-		03C8CD101954757B00E3E267 /* segueFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = segueFade.m; sourceTree = "<group>"; };
-		03C8CD111954757B00E3E267 /* splash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splash.h; sourceTree = "<group>"; };
-		03C8CD121954757B00E3E267 /* splash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splash.m; sourceTree = "<group>"; };
 		03C8CD181954759600E3E267 /* splash.xxiivv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.xxiivv.png; sourceTree = "<group>"; };
 		03C8CD1A195476CE00E3E267 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		03C8CD1C195476D400E3E267 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -107,6 +115,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03C6F6851954B0D20012BABA /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				03C6F6861954B0D20012BABA /* segueFade.h */,
+				03C6F6871954B0D20012BABA /* segueFade.m */,
+				03C6F6881954B0D20012BABA /* splash.load.png */,
+				03C6F6891954B0D20012BABA /* splash.logo.png */,
+				03C6F68A1954B0D20012BABA /* splash.support.png */,
+				03C6F68B1954B0D20012BABA /* splash.tune.wav */,
+				03C6F68C1954B0D20012BABA /* xxiivvSplash.h */,
+				03C6F68D1954B0D20012BABA /* xxiivvSplash.m */,
+			);
+			path = splash;
+			sourceTree = "<group>";
+		};
 		03EE743E1824CAE700AB60C0 = {
 			isa = PBXGroup;
 			children = (
@@ -142,16 +165,13 @@
 		03EE74501824CAE700AB60C0 /* Forking Paths */ = {
 			isa = PBXGroup;
 			children = (
+				03C6F6851954B0D20012BABA /* splash */,
 				03B0837319548883003A7DB7 /* ambience.wav */,
 				03C8CD1E19547D1000E3E267 /* icon.120.png */,
 				03C8CD181954759600E3E267 /* splash.xxiivv.png */,
 				03C8CD0C1954757B00E3E267 /* click.fast.wav */,
 				03C8CD0D1954757B00E3E267 /* click.high.wav */,
 				03C8CD0E1954757B00E3E267 /* click.low.wav */,
-				03C8CD0F1954757B00E3E267 /* segueFade.h */,
-				03C8CD101954757B00E3E267 /* segueFade.m */,
-				03C8CD111954757B00E3E267 /* splash.h */,
-				03C8CD121954757B00E3E267 /* splash.m */,
 				03EE74591824CAE700AB60C0 /* xxiivvAppDelegate.h */,
 				03EE745A1824CAE700AB60C0 /* xxiivvAppDelegate.m */,
 				03EE745C1824CAE700AB60C0 /* Main.storyboard */,
@@ -280,8 +300,12 @@
 				03EE74811824D69E00AB60C0 /* left.jpg in Resources */,
 				03EE745E1824CAE700AB60C0 /* Main.storyboard in Resources */,
 				03C8CD151954757B00E3E267 /* click.low.wav in Resources */,
+				03C6F6911954B0D20012BABA /* splash.support.png in Resources */,
 				03B0837419548883003A7DB7 /* ambience.wav in Resources */,
 				03C8CD1F19547D1000E3E267 /* icon.120.png in Resources */,
+				03C6F6921954B0D20012BABA /* splash.tune.wav in Resources */,
+				03C6F6901954B0D20012BABA /* splash.logo.png in Resources */,
+				03C6F68F1954B0D20012BABA /* splash.load.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,9 +326,9 @@
 			files = (
 				03EE745B1824CAE700AB60C0 /* xxiivvAppDelegate.m in Sources */,
 				03EE74611824CAE700AB60C0 /* xxiivvViewController.m in Sources */,
-				03C8CD171954757B00E3E267 /* splash.m in Sources */,
 				03EE74571824CAE700AB60C0 /* main.m in Sources */,
-				03C8CD161954757B00E3E267 /* segueFade.m in Sources */,
+				03C6F6931954B0D20012BABA /* xxiivvSplash.m in Sources */,
+				03C6F68E1954B0D20012BABA /* segueFade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
