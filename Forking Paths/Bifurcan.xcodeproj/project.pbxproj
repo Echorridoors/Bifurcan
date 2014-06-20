@@ -438,6 +438,7 @@
 				INFOPLIST_FILE = "Forking Paths/Bifurcan-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = Bifurcan;
+				PROVISIONING_PROFILE = "AFDDC3B7-BCF6-4C1E-816C-34327487935D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -452,6 +453,7 @@
 				INFOPLIST_FILE = "Forking Paths/Bifurcan-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = Bifurcan;
+				PROVISIONING_PROFILE = "AFDDC3B7-BCF6-4C1E-816C-34327487935D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
