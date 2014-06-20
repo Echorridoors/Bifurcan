@@ -24,6 +24,10 @@ int filterActive = 0;
 	[self templateView];
 	[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeTic) userInfo:nil repeats:YES];
 	[[UIApplication sharedApplication] setIdleTimerDisabled: YES];
+	
+	[self playSoundNamed:@"ambience":1];
+	audioPlayerAmbience.volume = 1;
+	audioPlayer.volume = 1;
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -218,6 +222,8 @@ int filterActive = 0;
 
 -(void)timeTic
 {
+	[self playSoundNamed:@"click.fast":0];
+	
 	NSDate *currentTime = [NSDate date];
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"HH"]; // @"hh-mm"
@@ -241,13 +247,14 @@ int filterActive = 0;
 - (IBAction)filterButtonWasClicked:(id)sender {
 	
 	if( filterActive == 1 ){
-		[self playSoundNamed:@"click.fast"];
+		[self playSoundNamed:@"click.fast":0];
 		filterActive = 0;
 		[[self.view viewWithTag:0] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"left.jpg"]]];
 		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"left.jpg"]];
+		
 	}
 	else {
-		[self playSoundNamed:@"click.low"];
+		[self playSoundNamed:@"click.low":0];
 		filterActive = 1;
 		self.view.backgroundColor = [UIColor blackColor];
 		[[self.view viewWithTag:0] setBackgroundColor:[UIColor blackColor]];
@@ -265,16 +272,27 @@ int filterActive = 0;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)playSoundNamed:(NSString*)name
+- (void)playSoundNamed:(NSString*)name :(int)loop
 {
 	NSLog(@" AUDIO | Playing sound: %@",name);
 	
 	NSString* audioPath = [[NSBundle mainBundle] pathForResource:name ofType:@"wav"];
 	NSURL* audioUrl = [NSURL fileURLWithPath:audioPath];
-	audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:nil];
-	audioPlayer.volume = 1;
-	[audioPlayer prepareToPlay];
-	[audioPlayer play];
+	
+	if(loop == 1){
+		audioPlayerAmbience = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:nil];
+		audioPlayerAmbience.volume = 1;
+		audioPlayerAmbience.numberOfLoops = -1;
+		[audioPlayerAmbience prepareToPlay];
+		[audioPlayerAmbience play];
+	}
+	else{
+		audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:nil];
+		audioPlayer.volume = 0.5;
+		audioPlayer.numberOfLoops = 0;
+		[audioPlayer prepareToPlay];
+		[audioPlayer play];
+	}
 	
 }
 

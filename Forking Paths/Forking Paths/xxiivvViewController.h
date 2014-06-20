@@ -17,3 +17,4 @@
 @end
 
 AVAudioPlayer *audioPlayer;
+AVAudioPlayer *audioPlayerAmbience;
