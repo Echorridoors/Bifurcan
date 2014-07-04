@@ -18,3 +18,5 @@
 
 AVAudioPlayer *audioPlayer;
 AVAudioPlayer *audioPlayerAmbience;
+
+int modeCurrent;

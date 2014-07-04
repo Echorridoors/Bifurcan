@@ -101,7 +101,7 @@ AVAudioPlayer *audioPlayerSplash;
 	NSError* err;
 	audioPlayerSplash = [[AVAudioPlayer alloc] initWithContentsOfURL: [NSURL fileURLWithPath:resourcePath] error:&err];
 	
-	audioPlayerSplash.volume = 0.5;
+	audioPlayerSplash.volume = 0.1;
 	audioPlayerSplash.numberOfLoops = 0;
 	audioPlayerSplash.currentTime = 0;
 	

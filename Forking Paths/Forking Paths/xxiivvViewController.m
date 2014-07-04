@@ -19,6 +19,7 @@ int filterActive = 0;
 
 - (void)viewDidLoad
 {
+	modeCurrent = 1;
     [super viewDidLoad];
 	[self templateGrid];
 	[self templateView];
@@ -38,7 +39,7 @@ int filterActive = 0;
 - (void)templateView
 {
 	self.view.tag = 888;
-	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"left.jpg"]];
+	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.left.jpg",modeCurrent]]];
 	self.filterButton.frame = self.view.frame;
 	self.filterButton.titleLabel.text = @"";
 	self.filterButton.layer.zPosition = 1;
@@ -62,9 +63,12 @@ int filterActive = 0;
 		while (gridCellCountHorizontal < 9) {
 			int gridCellId = (gridCellCountVertical*19) + gridCellCountHorizontal;
 			UIImageView *gridCell= [[UIImageView alloc] initWithFrame:CGRectMake((gridCellCountHorizontal * gridCellSizeFlat)+gridCellHorizontalMod, (gridCellCountVertical * gridCellSizeFlat)+gridCellVerticalMod, gridCellSizeFlat, gridCellSizeFlat)];
-			gridCell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"left.jpg"]];
+			gridCell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.left.jpg",modeCurrent]]];
 			gridCell.tag = gridCellId;
-			[self.view addSubview:gridCell];
+			if( gridCellCountVertical != 0 && gridCellCountHorizontal != 0 ){
+				[self.view addSubview:gridCell];
+			}
+			
 			gridCellCountHorizontal += 1;
 		}
 		gridCellCountVertical += 1;
@@ -79,7 +83,7 @@ int filterActive = 0;
 				gridCell.backgroundColor = [UIColor blackColor];
 			}
 			else{
-				gridCell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"left.jpg"]];
+				gridCell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.left.jpg",modeCurrent]]];
 			}
 		}
 	}
@@ -96,7 +100,7 @@ int filterActive = 0;
 	if(character == 5){ tagMod = 228; }
 	if(character == 6){ tagMod = 232; }
 	
-	UIImage *gridCellImage = [UIImage imageNamed:@"right.jpg"];
+	UIImage *gridCellImage = [UIImage imageNamed:[NSString stringWithFormat:@"%d.right.jpg",modeCurrent]];
 	
 	if(value == 1){
 		[[self.view viewWithTag:21+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
@@ -245,20 +249,29 @@ int filterActive = 0;
 	[self templateGridHighlight:6:[[t_seco substringWithRange:NSMakeRange(1, 1)] intValue]];
 }
 - (IBAction)filterButtonWasClicked:(id)sender {
+
+	modeCurrent += 1;
 	
-	if( filterActive == 1 ){
-		[self playSoundNamed:@"click.fast":0];
-		filterActive = 0;
-		[[self.view viewWithTag:0] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"left.jpg"]]];
-		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"left.jpg"]];
-		
+	if (modeCurrent > 6) {
+		modeCurrent = 1;
 	}
-	else {
-		[self playSoundNamed:@"click.low":0];
-		filterActive = 1;
-		self.view.backgroundColor = [UIColor blackColor];
-		[[self.view viewWithTag:0] setBackgroundColor:[UIColor blackColor]];
-	}
+	
+	NSLog(@"%d",modeCurrent);
+	
+//	if( filterActive == 1 ){
+//		[self playSoundNamed:@"click.fast":0];
+//		filterActive = 0;
+//		[[self.view viewWithTag:0] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"left.jpg"]]];
+//		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"left.jpg"]];
+//		
+//	}
+//	else {
+//		[self playSoundNamed:@"click.low":0];
+//		filterActive = 1;
+//		self.view.backgroundColor = [UIColor blackColor];
+//		[[self.view viewWithTag:0] setBackgroundColor:[UIColor blackColor]];
+//	}
+	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.left.jpg",modeCurrent]]];
 	[self timeTic];
 	[self templateGridFlash];
 	
