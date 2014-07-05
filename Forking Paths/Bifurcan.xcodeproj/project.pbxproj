@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033966971967ADC400685C88 /* 3.left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0339668F1967ADC400685C88 /* 3.left.jpg */; };
+		033966981967ADC400685C88 /* 3.right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966901967ADC400685C88 /* 3.right.jpg */; };
+		033966991967ADC400685C88 /* 4.left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966911967ADC400685C88 /* 4.left.jpg */; };
+		0339669A1967ADC400685C88 /* 4.right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966921967ADC400685C88 /* 4.right.jpg */; };
+		0339669B1967ADC400685C88 /* 5.left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966931967ADC400685C88 /* 5.left.jpg */; };
+		0339669C1967ADC400685C88 /* 5.right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966941967ADC400685C88 /* 5.right.jpg */; };
+		0339669D1967ADC400685C88 /* 6.left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966951967ADC400685C88 /* 6.left.jpg */; };
+		0339669E1967ADC400685C88 /* 6.right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966961967ADC400685C88 /* 6.right.jpg */; };
 		0367E4B11966341500CF5708 /* 2.left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4AB1966341500CF5708 /* 2.left.jpg */; };
 		0367E4B21966341500CF5708 /* 2.left@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4AC1966341500CF5708 /* 2.left@2x.jpg */; };
 		0367E4B31966341500CF5708 /* 2.right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4AD1966341500CF5708 /* 2.right.jpg */; };
@@ -64,6 +72,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0339668F1967ADC400685C88 /* 3.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.left.jpg; path = Images.xcassets/3.left.jpg; sourceTree = "<group>"; };
+		033966901967ADC400685C88 /* 3.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.right.jpg; path = Images.xcassets/3.right.jpg; sourceTree = "<group>"; };
+		033966911967ADC400685C88 /* 4.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.left.jpg; path = Images.xcassets/4.left.jpg; sourceTree = "<group>"; };
+		033966921967ADC400685C88 /* 4.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.right.jpg; path = Images.xcassets/4.right.jpg; sourceTree = "<group>"; };
+		033966931967ADC400685C88 /* 5.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5.left.jpg; path = Images.xcassets/5.left.jpg; sourceTree = "<group>"; };
+		033966941967ADC400685C88 /* 5.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5.right.jpg; path = Images.xcassets/5.right.jpg; sourceTree = "<group>"; };
+		033966951967ADC400685C88 /* 6.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 6.left.jpg; path = Images.xcassets/6.left.jpg; sourceTree = "<group>"; };
+		033966961967ADC400685C88 /* 6.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 6.right.jpg; path = Images.xcassets/6.right.jpg; sourceTree = "<group>"; };
 		0367E4AB1966341500CF5708 /* 2.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.left.jpg; path = Images.xcassets/2.left.jpg; sourceTree = "<group>"; };
 		0367E4AC1966341500CF5708 /* 2.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "2.left@2x.jpg"; path = "Images.xcassets/2.left@2x.jpg"; sourceTree = "<group>"; };
 		0367E4AD1966341500CF5708 /* 2.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.right.jpg; path = Images.xcassets/2.right.jpg; sourceTree = "<group>"; };
@@ -215,6 +231,14 @@
 		03EE74501824CAE700AB60C0 /* Forking Paths */ = {
 			isa = PBXGroup;
 			children = (
+				0339668F1967ADC400685C88 /* 3.left.jpg */,
+				033966901967ADC400685C88 /* 3.right.jpg */,
+				033966911967ADC400685C88 /* 4.left.jpg */,
+				033966921967ADC400685C88 /* 4.right.jpg */,
+				033966931967ADC400685C88 /* 5.left.jpg */,
+				033966941967ADC400685C88 /* 5.right.jpg */,
+				033966951967ADC400685C88 /* 6.left.jpg */,
+				033966961967ADC400685C88 /* 6.right.jpg */,
 				0367E4C519664C7C00CF5708 /* 6.left@2x.jpg */,
 				0367E4C619664C7C00CF5708 /* 6.right@2x.jpg */,
 				0367E4C119664A9800CF5708 /* 5.left@2x.jpg */,
@@ -350,11 +374,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				03C8CD131954757B00E3E267 /* click.fast.wav in Resources */,
+				0339669C1967ADC400685C88 /* 5.right.jpg in Resources */,
 				03EE74821824D69E00AB60C0 /* 1.right.jpg in Resources */,
 				03EE74631824CAE700AB60C0 /* Images.xcassets in Resources */,
 				03C8CD191954759600E3E267 /* splash.xxiivv.png in Resources */,
 				0367E4B11966341500CF5708 /* 2.left.jpg in Resources */,
 				03C8CD141954757B00E3E267 /* click.high.wav in Resources */,
+				033966991967ADC400685C88 /* 4.left.jpg in Resources */,
 				03EE74551824CAE700AB60C0 /* InfoPlist.strings in Resources */,
 				0367E4B51966341500CF5708 /* 1.left@2x.jpg in Resources */,
 				0367E4C319664A9800CF5708 /* 5.left@2x.jpg in Resources */,
@@ -363,18 +389,24 @@
 				03C8CD151954757B00E3E267 /* click.low.wav in Resources */,
 				0367E4B31966341500CF5708 /* 2.right.jpg in Resources */,
 				03C6F6911954B0D20012BABA /* splash.support.png in Resources */,
+				0339669E1967ADC400685C88 /* 6.right.jpg in Resources */,
 				0367E4C419664A9800CF5708 /* 5.right@2x.jpg in Resources */,
 				0367E4C019663A6E00CF5708 /* 4.right@2x.jpg in Resources */,
 				03B0837419548883003A7DB7 /* ambience.wav in Resources */,
 				0367E4BB196637A900CF5708 /* 3.left@2x.jpg in Resources */,
+				0339669D1967ADC400685C88 /* 6.left.jpg in Resources */,
 				0367E4C819664C7C00CF5708 /* 6.right@2x.jpg in Resources */,
 				03C8CD1F19547D1000E3E267 /* icon.120.png in Resources */,
+				0339669B1967ADC400685C88 /* 5.left.jpg in Resources */,
+				033966981967ADC400685C88 /* 3.right.jpg in Resources */,
 				0367E4B21966341500CF5708 /* 2.left@2x.jpg in Resources */,
+				033966971967ADC400685C88 /* 3.left.jpg in Resources */,
 				0367E4B61966341500CF5708 /* 1.right@2x.jpg in Resources */,
 				0367E4C719664C7C00CF5708 /* 6.left@2x.jpg in Resources */,
 				03C6F6921954B0D20012BABA /* splash.tune.wav in Resources */,
 				0367E4BF19663A6E00CF5708 /* 4.left@2x.jpg in Resources */,
 				0367E4BC196637A900CF5708 /* 3.right@2x.jpg in Resources */,
+				0339669A1967ADC400685C88 /* 4.right.jpg in Resources */,
 				0367E4B41966341500CF5708 /* 2.right@2x.jpg in Resources */,
 				03C6F6901954B0D20012BABA /* splash.logo.png in Resources */,
 				03C6F68F1954B0D20012BABA /* splash.load.png in Resources */,
