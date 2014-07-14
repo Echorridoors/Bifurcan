@@ -89,6 +89,7 @@
 		589686D61973627C007873BF /* click.high.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD0D1954757B00E3E267 /* click.high.wav */; };
 		589686D71973627C007873BF /* click.low.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD0E1954757B00E3E267 /* click.low.wav */; };
 		589686D819736281007873BF /* ambience.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03B0837319548883003A7DB7 /* ambience.wav */; };
+		589686DB197395EB007873BF /* xxiivvBifView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589686DA197395EB007873BF /* xxiivvBifView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +162,8 @@
 		5896869E197351C4007873BF /* xxiivvAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xxiivvAppDelegate.m; sourceTree = "<group>"; };
 		589686A1197351C4007873BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		589686A3197351C4007873BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		589686D9197395EB007873BF /* xxiivvBifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxiivvBifView.h; sourceTree = "<group>"; };
+		589686DA197395EB007873BF /* xxiivvBifView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xxiivvBifView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +287,8 @@
 			children = (
 				5896869D197351C4007873BF /* xxiivvAppDelegate.h */,
 				5896869E197351C4007873BF /* xxiivvAppDelegate.m */,
+				589686D9197395EB007873BF /* xxiivvBifView.h */,
+				589686DA197395EB007873BF /* xxiivvBifView.m */,
 				589686A0197351C4007873BF /* MainMenu.xib */,
 				589686A3197351C4007873BF /* Images.xcassets */,
 				58968692197351C4007873BF /* Supporting Files */,
@@ -504,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5896869F197351C4007873BF /* xxiivvAppDelegate.m in Sources */,
+				589686DB197395EB007873BF /* xxiivvBifView.m in Sources */,
 				58968698197351C4007873BF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,17 +16,17 @@ int filterActive = 0;
 {
     // Insert code here to initialize your application
     
-    _window.backgroundColor = [NSColor blueColor];
-    _window.backgroundColor = [NSColor colorWithPatternImage:[NSImage imageNamed:@"6.right"]];
-    [_window setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"6.right"]]];
+    _window.backgroundColor = [NSColor blackColor];
+    //_window.backgroundColor = [NSColor colorWithPatternImage:[NSImage imageNamed:@"6.right"]];
+    //[_window setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"6.right"]]];
     //NSView* = _window.
     
     
     modeCurrent = 1;
     //[super viewDidLoad];
-	[self templateGrid];
-	[self templateView];
-	[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeTic) userInfo:nil repeats:YES];
+	//[self templateGrid];
+	//[self templateView];
+	//[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeTic) userInfo:nil repeats:YES];
 }
 
 - (void)templateView
