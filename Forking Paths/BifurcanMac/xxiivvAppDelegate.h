@@ -13,6 +13,3 @@
 @property (assign) IBOutlet NSWindow *window;
 
 @end
-
-
-int modeCurrent;

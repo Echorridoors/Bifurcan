@@ -8,7 +8,11 @@
 
 #import "xxiivvBifView.h"
 
+int modeCurrent = 0;
+
 @implementation xxiivvBifView
+
+
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -25,12 +29,24 @@
     [self setNeedsDisplay:YES];
 }
 
+-(void)nextFilter {
+    modeCurrent++;
+    modeCurrent%=6;
+    left = [NSImage imageNamed:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
+    right = [NSImage imageNamed:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
+    [self setNeedsDisplay:true];
+}
+
+-(void)mouseUp:(NSEvent *)theEvent {
+    [self nextFilter];
+}
+
 - (void)drawRect:(NSRect)dirtyRect
 {
     if(!left) {
         [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(refresh) userInfo:nil repeats:YES];
-        left = [NSImage imageNamed:[NSString stringWithFormat:@"%d.left",1]];
-        right = [NSImage imageNamed:[NSString stringWithFormat:@"%d.right",1]];
+        left = [NSImage imageNamed:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
+        right = [NSImage imageNamed:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
     }
     
     [super drawRect:dirtyRect];
