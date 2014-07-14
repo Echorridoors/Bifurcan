@@ -52,48 +52,68 @@
 		03EE745E1824CAE700AB60C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03EE745C1824CAE700AB60C0 /* Main.storyboard */; };
 		03EE74611824CAE700AB60C0 /* xxiivvViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EE74601824CAE700AB60C0 /* xxiivvViewController.m */; };
 		03EE74631824CAE700AB60C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03EE74621824CAE700AB60C0 /* Images.xcassets */; };
-		03EE746A1824CAE700AB60C0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EE74691824CAE700AB60C0 /* XCTest.framework */; };
-		03EE746B1824CAE700AB60C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EE744A1824CAE700AB60C0 /* Foundation.framework */; };
-		03EE746C1824CAE700AB60C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EE744E1824CAE700AB60C0 /* UIKit.framework */; };
-		03EE74741824CAE700AB60C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03EE74721824CAE700AB60C0 /* InfoPlist.strings */; };
-		03EE74761824CAE700AB60C0 /* Forking_PathsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EE74751824CAE700AB60C0 /* Forking_PathsTests.m */; };
 		03EE74811824D69E00AB60C0 /* 1.left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03EE747F1824D69E00AB60C0 /* 1.left.jpg */; };
 		03EE74821824D69E00AB60C0 /* 1.right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03EE74801824D69E00AB60C0 /* 1.right.jpg */; };
+		5896868C197351C3007873BF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5896868B197351C3007873BF /* Cocoa.framework */; };
+		58968696197351C4007873BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58968694197351C4007873BF /* InfoPlist.strings */; };
+		58968698197351C4007873BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58968697197351C4007873BF /* main.m */; };
+		5896869C197351C4007873BF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5896869A197351C4007873BF /* Credits.rtf */; };
+		5896869F197351C4007873BF /* xxiivvAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5896869E197351C4007873BF /* xxiivvAppDelegate.m */; };
+		589686A2197351C4007873BF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589686A0197351C4007873BF /* MainMenu.xib */; };
+		589686A4197351C4007873BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 589686A3197351C4007873BF /* Images.xcassets */; };
+		589686BD19735657007873BF /* 2.left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4AB1966341500CF5708 /* 2.left.jpg */; };
+		589686BE19735657007873BF /* 2.left@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4AC1966341500CF5708 /* 2.left@2x.jpg */; };
+		589686BF19735657007873BF /* 2.right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4AD1966341500CF5708 /* 2.right.jpg */; };
+		589686C019735657007873BF /* 2.right@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4AE1966341500CF5708 /* 2.right@2x.jpg */; };
+		589686C119735657007873BF /* 1.left@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4AF1966341500CF5708 /* 1.left@2x.jpg */; };
+		589686C219735657007873BF /* 1.right@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4B01966341500CF5708 /* 1.right@2x.jpg */; };
+		589686C319735657007873BF /* 1.left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03EE747F1824D69E00AB60C0 /* 1.left.jpg */; };
+		589686C419735657007873BF /* 1.right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03EE74801824D69E00AB60C0 /* 1.right.jpg */; };
+		589686C519735657007873BF /* 3.left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0339668F1967ADC400685C88 /* 3.left.jpg */; };
+		589686C619735657007873BF /* 3.right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966901967ADC400685C88 /* 3.right.jpg */; };
+		589686C719735657007873BF /* 4.left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966911967ADC400685C88 /* 4.left.jpg */; };
+		589686C819735657007873BF /* 4.right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966921967ADC400685C88 /* 4.right.jpg */; };
+		589686C919735657007873BF /* 5.left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966931967ADC400685C88 /* 5.left.jpg */; };
+		589686CA19735657007873BF /* 5.right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966941967ADC400685C88 /* 5.right.jpg */; };
+		589686CB19735657007873BF /* 6.left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966951967ADC400685C88 /* 6.left.jpg */; };
+		589686CC19735657007873BF /* 6.right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 033966961967ADC400685C88 /* 6.right.jpg */; };
+		589686CD19735657007873BF /* 6.left@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4C519664C7C00CF5708 /* 6.left@2x.jpg */; };
+		589686CE19735657007873BF /* 6.right@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4C619664C7C00CF5708 /* 6.right@2x.jpg */; };
+		589686CF19735657007873BF /* 5.left@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4C119664A9800CF5708 /* 5.left@2x.jpg */; };
+		589686D019735657007873BF /* 5.right@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4C219664A9800CF5708 /* 5.right@2x.jpg */; };
+		589686D119735657007873BF /* 4.left@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4BD19663A6E00CF5708 /* 4.left@2x.jpg */; };
+		589686D219735657007873BF /* 4.right@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4BE19663A6E00CF5708 /* 4.right@2x.jpg */; };
+		589686D319735657007873BF /* 3.left@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4B9196637A900CF5708 /* 3.left@2x.jpg */; };
+		589686D419735657007873BF /* 3.right@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4BA196637A900CF5708 /* 3.right@2x.jpg */; };
+		589686D51973627C007873BF /* click.fast.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD0C1954757B00E3E267 /* click.fast.wav */; };
+		589686D61973627C007873BF /* click.high.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD0D1954757B00E3E267 /* click.high.wav */; };
+		589686D71973627C007873BF /* click.low.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD0E1954757B00E3E267 /* click.low.wav */; };
+		589686D819736281007873BF /* ambience.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03B0837319548883003A7DB7 /* ambience.wav */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		03EE746D1824CAE700AB60C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 03EE743F1824CAE700AB60C0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 03EE74461824CAE700AB60C0;
-			remoteInfo = "Forking Paths";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		0339668F1967ADC400685C88 /* 3.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.left.jpg; path = Images.xcassets/3.left.jpg; sourceTree = "<group>"; };
-		033966901967ADC400685C88 /* 3.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.right.jpg; path = Images.xcassets/3.right.jpg; sourceTree = "<group>"; };
-		033966911967ADC400685C88 /* 4.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.left.jpg; path = Images.xcassets/4.left.jpg; sourceTree = "<group>"; };
-		033966921967ADC400685C88 /* 4.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.right.jpg; path = Images.xcassets/4.right.jpg; sourceTree = "<group>"; };
-		033966931967ADC400685C88 /* 5.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5.left.jpg; path = Images.xcassets/5.left.jpg; sourceTree = "<group>"; };
-		033966941967ADC400685C88 /* 5.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5.right.jpg; path = Images.xcassets/5.right.jpg; sourceTree = "<group>"; };
-		033966951967ADC400685C88 /* 6.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 6.left.jpg; path = Images.xcassets/6.left.jpg; sourceTree = "<group>"; };
-		033966961967ADC400685C88 /* 6.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 6.right.jpg; path = Images.xcassets/6.right.jpg; sourceTree = "<group>"; };
-		0367E4AB1966341500CF5708 /* 2.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.left.jpg; path = Images.xcassets/2.left.jpg; sourceTree = "<group>"; };
-		0367E4AC1966341500CF5708 /* 2.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "2.left@2x.jpg"; path = "Images.xcassets/2.left@2x.jpg"; sourceTree = "<group>"; };
-		0367E4AD1966341500CF5708 /* 2.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.right.jpg; path = Images.xcassets/2.right.jpg; sourceTree = "<group>"; };
-		0367E4AE1966341500CF5708 /* 2.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "2.right@2x.jpg"; path = "Images.xcassets/2.right@2x.jpg"; sourceTree = "<group>"; };
-		0367E4AF1966341500CF5708 /* 1.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1.left@2x.jpg"; path = "Images.xcassets/1.left@2x.jpg"; sourceTree = "<group>"; };
-		0367E4B01966341500CF5708 /* 1.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1.right@2x.jpg"; path = "Images.xcassets/1.right@2x.jpg"; sourceTree = "<group>"; };
-		0367E4B9196637A900CF5708 /* 3.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "3.left@2x.jpg"; path = "Images.xcassets/3.left@2x.jpg"; sourceTree = "<group>"; };
-		0367E4BA196637A900CF5708 /* 3.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "3.right@2x.jpg"; path = "Images.xcassets/3.right@2x.jpg"; sourceTree = "<group>"; };
-		0367E4BD19663A6E00CF5708 /* 4.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "4.left@2x.jpg"; path = "Images.xcassets/4.left@2x.jpg"; sourceTree = "<group>"; };
-		0367E4BE19663A6E00CF5708 /* 4.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "4.right@2x.jpg"; path = "Images.xcassets/4.right@2x.jpg"; sourceTree = "<group>"; };
-		0367E4C119664A9800CF5708 /* 5.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "5.left@2x.jpg"; path = "Images.xcassets/5.left@2x.jpg"; sourceTree = "<group>"; };
-		0367E4C219664A9800CF5708 /* 5.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "5.right@2x.jpg"; path = "Images.xcassets/5.right@2x.jpg"; sourceTree = "<group>"; };
-		0367E4C519664C7C00CF5708 /* 6.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "6.left@2x.jpg"; path = "Images.xcassets/6.left@2x.jpg"; sourceTree = "<group>"; };
-		0367E4C619664C7C00CF5708 /* 6.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "6.right@2x.jpg"; path = "Images.xcassets/6.right@2x.jpg"; sourceTree = "<group>"; };
+		0339668F1967ADC400685C88 /* 3.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.left.jpg; path = "Forking Paths/Images.xcassets/3.left.jpg"; sourceTree = "<group>"; };
+		033966901967ADC400685C88 /* 3.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.right.jpg; path = "Forking Paths/Images.xcassets/3.right.jpg"; sourceTree = "<group>"; };
+		033966911967ADC400685C88 /* 4.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.left.jpg; path = "Forking Paths/Images.xcassets/4.left.jpg"; sourceTree = "<group>"; };
+		033966921967ADC400685C88 /* 4.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.right.jpg; path = "Forking Paths/Images.xcassets/4.right.jpg"; sourceTree = "<group>"; };
+		033966931967ADC400685C88 /* 5.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5.left.jpg; path = "Forking Paths/Images.xcassets/5.left.jpg"; sourceTree = "<group>"; };
+		033966941967ADC400685C88 /* 5.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5.right.jpg; path = "Forking Paths/Images.xcassets/5.right.jpg"; sourceTree = "<group>"; };
+		033966951967ADC400685C88 /* 6.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 6.left.jpg; path = "Forking Paths/Images.xcassets/6.left.jpg"; sourceTree = "<group>"; };
+		033966961967ADC400685C88 /* 6.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 6.right.jpg; path = "Forking Paths/Images.xcassets/6.right.jpg"; sourceTree = "<group>"; };
+		0367E4AB1966341500CF5708 /* 2.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.left.jpg; path = "Forking Paths/Images.xcassets/2.left.jpg"; sourceTree = "<group>"; };
+		0367E4AC1966341500CF5708 /* 2.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "2.left@2x.jpg"; path = "Forking Paths/Images.xcassets/2.left@2x.jpg"; sourceTree = "<group>"; };
+		0367E4AD1966341500CF5708 /* 2.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.right.jpg; path = "Forking Paths/Images.xcassets/2.right.jpg"; sourceTree = "<group>"; };
+		0367E4AE1966341500CF5708 /* 2.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "2.right@2x.jpg"; path = "Forking Paths/Images.xcassets/2.right@2x.jpg"; sourceTree = "<group>"; };
+		0367E4AF1966341500CF5708 /* 1.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1.left@2x.jpg"; path = "Forking Paths/Images.xcassets/1.left@2x.jpg"; sourceTree = "<group>"; };
+		0367E4B01966341500CF5708 /* 1.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1.right@2x.jpg"; path = "Forking Paths/Images.xcassets/1.right@2x.jpg"; sourceTree = "<group>"; };
+		0367E4B9196637A900CF5708 /* 3.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "3.left@2x.jpg"; path = "Forking Paths/Images.xcassets/3.left@2x.jpg"; sourceTree = "<group>"; };
+		0367E4BA196637A900CF5708 /* 3.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "3.right@2x.jpg"; path = "Forking Paths/Images.xcassets/3.right@2x.jpg"; sourceTree = "<group>"; };
+		0367E4BD19663A6E00CF5708 /* 4.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "4.left@2x.jpg"; path = "Forking Paths/Images.xcassets/4.left@2x.jpg"; sourceTree = "<group>"; };
+		0367E4BE19663A6E00CF5708 /* 4.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "4.right@2x.jpg"; path = "Forking Paths/Images.xcassets/4.right@2x.jpg"; sourceTree = "<group>"; };
+		0367E4C119664A9800CF5708 /* 5.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "5.left@2x.jpg"; path = "Forking Paths/Images.xcassets/5.left@2x.jpg"; sourceTree = "<group>"; };
+		0367E4C219664A9800CF5708 /* 5.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "5.right@2x.jpg"; path = "Forking Paths/Images.xcassets/5.right@2x.jpg"; sourceTree = "<group>"; };
+		0367E4C519664C7C00CF5708 /* 6.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "6.left@2x.jpg"; path = "Forking Paths/Images.xcassets/6.left@2x.jpg"; sourceTree = "<group>"; };
+		0367E4C619664C7C00CF5708 /* 6.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "6.right@2x.jpg"; path = "Forking Paths/Images.xcassets/6.right@2x.jpg"; sourceTree = "<group>"; };
 		03B0837319548883003A7DB7 /* ambience.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ambience.wav; sourceTree = "<group>"; };
 		03C6F6861954B0D20012BABA /* segueFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segueFade.h; sourceTree = "<group>"; };
 		03C6F6871954B0D20012BABA /* segueFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = segueFade.m; sourceTree = "<group>"; };
@@ -124,13 +144,23 @@
 		03EE745F1824CAE700AB60C0 /* xxiivvViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xxiivvViewController.h; sourceTree = "<group>"; };
 		03EE74601824CAE700AB60C0 /* xxiivvViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xxiivvViewController.m; sourceTree = "<group>"; };
 		03EE74621824CAE700AB60C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		03EE74681824CAE700AB60C0 /* BifurcanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BifurcanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03EE74691824CAE700AB60C0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		03EE74711824CAE700AB60C0 /* BifurcanTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BifurcanTests-Info.plist"; sourceTree = "<group>"; };
-		03EE74731824CAE700AB60C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		03EE74751824CAE700AB60C0 /* Forking_PathsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Forking_PathsTests.m; sourceTree = "<group>"; };
-		03EE747F1824D69E00AB60C0 /* 1.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.left.jpg; path = Images.xcassets/1.left.jpg; sourceTree = "<group>"; };
-		03EE74801824D69E00AB60C0 /* 1.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.right.jpg; path = Images.xcassets/1.right.jpg; sourceTree = "<group>"; };
+		03EE747F1824D69E00AB60C0 /* 1.left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.left.jpg; path = "Forking Paths/Images.xcassets/1.left.jpg"; sourceTree = "<group>"; };
+		03EE74801824D69E00AB60C0 /* 1.right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.right.jpg; path = "Forking Paths/Images.xcassets/1.right.jpg"; sourceTree = "<group>"; };
+		5896868A197351C3007873BF /* BifurcanMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BifurcanMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5896868B197351C3007873BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		5896868E197351C3007873BF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		5896868F197351C4007873BF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		58968690197351C4007873BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		58968693197351C4007873BF /* BifurcanMac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BifurcanMac-Info.plist"; sourceTree = "<group>"; };
+		58968695197351C4007873BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		58968697197351C4007873BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		58968699197351C4007873BF /* BifurcanMac-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BifurcanMac-Prefix.pch"; sourceTree = "<group>"; };
+		5896869B197351C4007873BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		5896869D197351C4007873BF /* xxiivvAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xxiivvAppDelegate.h; sourceTree = "<group>"; };
+		5896869E197351C4007873BF /* xxiivvAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xxiivvAppDelegate.m; sourceTree = "<group>"; };
+		589686A1197351C4007873BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		589686A3197351C4007873BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,41 +176,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		03EE74651824CAE700AB60C0 /* Frameworks */ = {
+		58968687197351C3007873BF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03EE746A1824CAE700AB60C0 /* XCTest.framework in Frameworks */,
-				03EE746C1824CAE700AB60C0 /* UIKit.framework in Frameworks */,
-				03EE746B1824CAE700AB60C0 /* Foundation.framework in Frameworks */,
+				5896868C197351C3007873BF /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0367E4B71966342200CF5708 /* 1 */ = {
-			isa = PBXGroup;
-			children = (
-				0367E4AF1966341500CF5708 /* 1.left@2x.jpg */,
-				0367E4B01966341500CF5708 /* 1.right@2x.jpg */,
-				03EE747F1824D69E00AB60C0 /* 1.left.jpg */,
-				03EE74801824D69E00AB60C0 /* 1.right.jpg */,
-			);
-			name = 1;
-			sourceTree = "<group>";
-		};
-		0367E4B81966342700CF5708 /* 2 */ = {
-			isa = PBXGroup;
-			children = (
-				0367E4AB1966341500CF5708 /* 2.left.jpg */,
-				0367E4AC1966341500CF5708 /* 2.left@2x.jpg */,
-				0367E4AD1966341500CF5708 /* 2.right.jpg */,
-				0367E4AE1966341500CF5708 /* 2.right@2x.jpg */,
-			);
-			name = 2;
-			sourceTree = "<group>";
-		};
 		03C6F6851954B0D20012BABA /* splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,8 +205,9 @@
 		03EE743E1824CAE700AB60C0 = {
 			isa = PBXGroup;
 			children = (
+				589686BC19735623007873BF /* Images */,
 				03EE74501824CAE700AB60C0 /* Forking Paths */,
-				03EE746F1824CAE700AB60C0 /* Forking PathsTests */,
+				58968691197351C4007873BF /* BifurcanMac */,
 				03EE74491824CAE700AB60C0 /* Frameworks */,
 				03EE74481824CAE700AB60C0 /* Products */,
 			);
@@ -210,7 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				03EE74471824CAE700AB60C0 /* Bifurcan.app */,
-				03EE74681824CAE700AB60C0 /* BifurcanTests.xctest */,
+				5896868A197351C3007873BF /* BifurcanMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,6 +231,8 @@
 				03EE744C1824CAE700AB60C0 /* CoreGraphics.framework */,
 				03EE744E1824CAE700AB60C0 /* UIKit.framework */,
 				03EE74691824CAE700AB60C0 /* XCTest.framework */,
+				5896868B197351C3007873BF /* Cocoa.framework */,
+				5896868D197351C3007873BF /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -231,24 +240,6 @@
 		03EE74501824CAE700AB60C0 /* Forking Paths */ = {
 			isa = PBXGroup;
 			children = (
-				0339668F1967ADC400685C88 /* 3.left.jpg */,
-				033966901967ADC400685C88 /* 3.right.jpg */,
-				033966911967ADC400685C88 /* 4.left.jpg */,
-				033966921967ADC400685C88 /* 4.right.jpg */,
-				033966931967ADC400685C88 /* 5.left.jpg */,
-				033966941967ADC400685C88 /* 5.right.jpg */,
-				033966951967ADC400685C88 /* 6.left.jpg */,
-				033966961967ADC400685C88 /* 6.right.jpg */,
-				0367E4C519664C7C00CF5708 /* 6.left@2x.jpg */,
-				0367E4C619664C7C00CF5708 /* 6.right@2x.jpg */,
-				0367E4C119664A9800CF5708 /* 5.left@2x.jpg */,
-				0367E4C219664A9800CF5708 /* 5.right@2x.jpg */,
-				0367E4BD19663A6E00CF5708 /* 4.left@2x.jpg */,
-				0367E4BE19663A6E00CF5708 /* 4.right@2x.jpg */,
-				0367E4B9196637A900CF5708 /* 3.left@2x.jpg */,
-				0367E4BA196637A900CF5708 /* 3.right@2x.jpg */,
-				0367E4B81966342700CF5708 /* 2 */,
-				0367E4B71966342200CF5708 /* 1 */,
 				03C6F6851954B0D20012BABA /* splash */,
 				03B0837319548883003A7DB7 /* ambience.wav */,
 				03C8CD1E19547D1000E3E267 /* icon.120.png */,
@@ -278,22 +269,69 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		03EE746F1824CAE700AB60C0 /* Forking PathsTests */ = {
+		5896868D197351C3007873BF /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				03EE74751824CAE700AB60C0 /* Forking_PathsTests.m */,
-				03EE74701824CAE700AB60C0 /* Supporting Files */,
+				5896868E197351C3007873BF /* AppKit.framework */,
+				5896868F197351C4007873BF /* CoreData.framework */,
+				58968690197351C4007873BF /* Foundation.framework */,
 			);
-			path = "Forking PathsTests";
+			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		03EE74701824CAE700AB60C0 /* Supporting Files */ = {
+		58968691197351C4007873BF /* BifurcanMac */ = {
 			isa = PBXGroup;
 			children = (
-				03EE74711824CAE700AB60C0 /* BifurcanTests-Info.plist */,
-				03EE74721824CAE700AB60C0 /* InfoPlist.strings */,
+				5896869D197351C4007873BF /* xxiivvAppDelegate.h */,
+				5896869E197351C4007873BF /* xxiivvAppDelegate.m */,
+				589686A0197351C4007873BF /* MainMenu.xib */,
+				589686A3197351C4007873BF /* Images.xcassets */,
+				58968692197351C4007873BF /* Supporting Files */,
+			);
+			path = BifurcanMac;
+			sourceTree = "<group>";
+		};
+		58968692197351C4007873BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58968693197351C4007873BF /* BifurcanMac-Info.plist */,
+				58968694197351C4007873BF /* InfoPlist.strings */,
+				58968697197351C4007873BF /* main.m */,
+				58968699197351C4007873BF /* BifurcanMac-Prefix.pch */,
+				5896869A197351C4007873BF /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		589686BC19735623007873BF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0367E4AB1966341500CF5708 /* 2.left.jpg */,
+				0367E4AC1966341500CF5708 /* 2.left@2x.jpg */,
+				0367E4AD1966341500CF5708 /* 2.right.jpg */,
+				0367E4AE1966341500CF5708 /* 2.right@2x.jpg */,
+				0367E4AF1966341500CF5708 /* 1.left@2x.jpg */,
+				0367E4B01966341500CF5708 /* 1.right@2x.jpg */,
+				03EE747F1824D69E00AB60C0 /* 1.left.jpg */,
+				03EE74801824D69E00AB60C0 /* 1.right.jpg */,
+				0339668F1967ADC400685C88 /* 3.left.jpg */,
+				033966901967ADC400685C88 /* 3.right.jpg */,
+				033966911967ADC400685C88 /* 4.left.jpg */,
+				033966921967ADC400685C88 /* 4.right.jpg */,
+				033966931967ADC400685C88 /* 5.left.jpg */,
+				033966941967ADC400685C88 /* 5.right.jpg */,
+				033966951967ADC400685C88 /* 6.left.jpg */,
+				033966961967ADC400685C88 /* 6.right.jpg */,
+				0367E4C519664C7C00CF5708 /* 6.left@2x.jpg */,
+				0367E4C619664C7C00CF5708 /* 6.right@2x.jpg */,
+				0367E4C119664A9800CF5708 /* 5.left@2x.jpg */,
+				0367E4C219664A9800CF5708 /* 5.right@2x.jpg */,
+				0367E4BD19663A6E00CF5708 /* 4.left@2x.jpg */,
+				0367E4BE19663A6E00CF5708 /* 4.right@2x.jpg */,
+				0367E4B9196637A900CF5708 /* 3.left@2x.jpg */,
+				0367E4BA196637A900CF5708 /* 3.right@2x.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,23 +354,22 @@
 			productReference = 03EE74471824CAE700AB60C0 /* Bifurcan.app */;
 			productType = "com.apple.product-type.application";
 		};
-		03EE74671824CAE700AB60C0 /* BifurcanTests */ = {
+		58968689197351C3007873BF /* BifurcanMac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03EE747C1824CAE700AB60C0 /* Build configuration list for PBXNativeTarget "BifurcanTests" */;
+			buildConfigurationList = 589686BA197351C4007873BF /* Build configuration list for PBXNativeTarget "BifurcanMac" */;
 			buildPhases = (
-				03EE74641824CAE700AB60C0 /* Sources */,
-				03EE74651824CAE700AB60C0 /* Frameworks */,
-				03EE74661824CAE700AB60C0 /* Resources */,
+				58968686197351C3007873BF /* Sources */,
+				58968687197351C3007873BF /* Frameworks */,
+				58968688197351C3007873BF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				03EE746E1824CAE700AB60C0 /* PBXTargetDependency */,
 			);
-			name = BifurcanTests;
-			productName = "Forking PathsTests";
-			productReference = 03EE74681824CAE700AB60C0 /* BifurcanTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = BifurcanMac;
+			productName = BifurcanMac;
+			productReference = 5896868A197351C3007873BF /* BifurcanMac.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -343,11 +380,6 @@
 				CLASSPREFIX = xxiivv;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = XXIIVV;
-				TargetAttributes = {
-					03EE74671824CAE700AB60C0 = {
-						TestTargetID = 03EE74461824CAE700AB60C0;
-					};
-				};
 			};
 			buildConfigurationList = 03EE74421824CAE700AB60C0 /* Build configuration list for PBXProject "Bifurcan" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -363,7 +395,7 @@
 			projectRoot = "";
 			targets = (
 				03EE74461824CAE700AB60C0 /* Bifurcan */,
-				03EE74671824CAE700AB60C0 /* BifurcanTests */,
+				58968689197351C3007873BF /* BifurcanMac */,
 			);
 		};
 /* End PBXProject section */
@@ -413,11 +445,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		03EE74661824CAE700AB60C0 /* Resources */ = {
+		58968688197351C3007873BF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03EE74741824CAE700AB60C0 /* InfoPlist.strings in Resources */,
+				589686BF19735657007873BF /* 2.right.jpg in Resources */,
+				589686C719735657007873BF /* 4.left.jpg in Resources */,
+				58968696197351C4007873BF /* InfoPlist.strings in Resources */,
+				589686D319735657007873BF /* 3.left@2x.jpg in Resources */,
+				589686D51973627C007873BF /* click.fast.wav in Resources */,
+				589686BE19735657007873BF /* 2.left@2x.jpg in Resources */,
+				589686CC19735657007873BF /* 6.right.jpg in Resources */,
+				589686C919735657007873BF /* 5.left.jpg in Resources */,
+				589686C119735657007873BF /* 1.left@2x.jpg in Resources */,
+				589686CE19735657007873BF /* 6.right@2x.jpg in Resources */,
+				589686D61973627C007873BF /* click.high.wav in Resources */,
+				589686D019735657007873BF /* 5.right@2x.jpg in Resources */,
+				589686D419735657007873BF /* 3.right@2x.jpg in Resources */,
+				589686CD19735657007873BF /* 6.left@2x.jpg in Resources */,
+				589686D119735657007873BF /* 4.left@2x.jpg in Resources */,
+				589686C219735657007873BF /* 1.right@2x.jpg in Resources */,
+				589686BD19735657007873BF /* 2.left.jpg in Resources */,
+				589686D219735657007873BF /* 4.right@2x.jpg in Resources */,
+				589686A4197351C4007873BF /* Images.xcassets in Resources */,
+				589686C419735657007873BF /* 1.right.jpg in Resources */,
+				589686C019735657007873BF /* 2.right@2x.jpg in Resources */,
+				589686C819735657007873BF /* 4.right.jpg in Resources */,
+				589686D71973627C007873BF /* click.low.wav in Resources */,
+				589686CF19735657007873BF /* 5.left@2x.jpg in Resources */,
+				589686C519735657007873BF /* 3.left.jpg in Resources */,
+				5896869C197351C4007873BF /* Credits.rtf in Resources */,
+				589686C619735657007873BF /* 3.right.jpg in Resources */,
+				589686CB19735657007873BF /* 6.left.jpg in Resources */,
+				589686D819736281007873BF /* ambience.wav in Resources */,
+				589686A2197351C4007873BF /* MainMenu.xib in Resources */,
+				589686C319735657007873BF /* 1.left.jpg in Resources */,
+				589686CA19735657007873BF /* 5.right.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,23 +499,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		03EE74641824CAE700AB60C0 /* Sources */ = {
+		58968686197351C3007873BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03EE74761824CAE700AB60C0 /* Forking_PathsTests.m in Sources */,
+				5896869F197351C4007873BF /* xxiivvAppDelegate.m in Sources */,
+				58968698197351C4007873BF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		03EE746E1824CAE700AB60C0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 03EE74461824CAE700AB60C0 /* Bifurcan */;
-			targetProxy = 03EE746D1824CAE700AB60C0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		03EE74531824CAE700AB60C0 /* InfoPlist.strings */ = {
@@ -471,12 +527,28 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		03EE74721824CAE700AB60C0 /* InfoPlist.strings */ = {
+		58968694197351C4007873BF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				03EE74731824CAE700AB60C0 /* en */,
+				58968695197351C4007873BF /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5896869A197351C4007873BF /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5896869B197351C4007873BF /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		589686A0197351C4007873BF /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				589686A1197351C4007873BF /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -566,7 +638,7 @@
 				INFOPLIST_FILE = "Forking Paths/Bifurcan-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = Bifurcan;
-				PROVISIONING_PROFILE = "AFDDC3B7-BCF6-4C1E-816C-34327487935D";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -581,50 +653,57 @@
 				INFOPLIST_FILE = "Forking Paths/Bifurcan-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = Bifurcan;
-				PROVISIONING_PROFILE = "AFDDC3B7-BCF6-4C1E-816C-34327487935D";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
-		03EE747D1824CAE700AB60C0 /* Debug */ = {
+		589686B6197351C4007873BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Forking Paths.app/Forking Paths";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Forking Paths/Forking Paths-Prefix.pch";
+				GCC_PREFIX_HEADER = "BifurcanMac/BifurcanMac-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Forking PathsTests/BifurcanTests-Info.plist";
-				PRODUCT_NAME = BifurcanTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "BifurcanMac/BifurcanMac-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		03EE747E1824CAE700AB60C0 /* Release */ = {
+		589686B7197351C4007873BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Forking Paths.app/Forking Paths";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Forking Paths/Forking Paths-Prefix.pch";
-				INFOPLIST_FILE = "Forking PathsTests/BifurcanTests-Info.plist";
-				PRODUCT_NAME = BifurcanTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				GCC_PREFIX_HEADER = "BifurcanMac/BifurcanMac-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "BifurcanMac/BifurcanMac-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -649,14 +728,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03EE747C1824CAE700AB60C0 /* Build configuration list for PBXNativeTarget "BifurcanTests" */ = {
+		589686BA197351C4007873BF /* Build configuration list for PBXNativeTarget "BifurcanMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03EE747D1824CAE700AB60C0 /* Debug */,
-				03EE747E1824CAE700AB60C0 /* Release */,
+				589686B6197351C4007873BF /* Debug */,
+				589686B7197351C4007873BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

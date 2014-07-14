@@ -63,8 +63,9 @@ int filterActive = 0;
 		while (gridCellCountHorizontal < 9) {
 			int gridCellId = (gridCellCountVertical*19) + gridCellCountHorizontal;
 			UIImageView *gridCell= [[UIImageView alloc] initWithFrame:CGRectMake((gridCellCountHorizontal * gridCellSizeFlat)+gridCellHorizontalMod, (gridCellCountVertical * gridCellSizeFlat)+gridCellVerticalMod, gridCellSizeFlat, gridCellSizeFlat)];
-			gridCell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.left.jpg",modeCurrent]]];
-			gridCell.tag = gridCellId;
+			//gridCell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.left.jpg",modeCurrent]]];
+            gridCell.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.left.jpg",modeCurrent]];
+            gridCell.tag = gridCellId;
 			if( gridCellCountVertical != 0 && gridCellCountHorizontal != 0 ){
 				[self.view addSubview:gridCell];
 			}
@@ -77,13 +78,13 @@ int filterActive = 0;
 
 -(void)templateGridFlash
 {
-	for (UIView *gridCell in [self.view subviews]) {
+	for (UIImageView *gridCell in [self.view subviews]) {
 		if (gridCell.tag > 0) {
 			if(filterActive == 1){
 				gridCell.backgroundColor = [UIColor blackColor];
 			}
 			else{
-				gridCell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.left.jpg",modeCurrent]]];
+				gridCell.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.left.jpg",modeCurrent]];
 			}
 		}
 	}
@@ -101,127 +102,127 @@ int filterActive = 0;
 	if(character == 6){ tagMod = 232; }
 	
 	UIImage *gridCellImage = [UIImage imageNamed:[NSString stringWithFormat:@"%d.right.jpg",modeCurrent]];
-	
-	if(value == 1){
-		[[self.view viewWithTag:21+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:40+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:50+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:59+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:78+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:97+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-	}
-	if(value == 2){
-		[[self.view viewWithTag:20+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:21+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:22+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:41+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:58+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:59+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:60+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:77+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:96+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:97+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:98+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-	}
-	if(value == 3){
-		[[self.view viewWithTag:20+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:21+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:22+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:41+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:58+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:59+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:60+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:79+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:96+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:97+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:98+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-	}
-	if(value == 4){
-		[[self.view viewWithTag:20+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:22+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:39+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:41+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:58+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:59+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:60+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:79+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:98+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-	}
-	if(value == 5){
-		[[self.view viewWithTag:20+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:21+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:22+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:39+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:58+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:59+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:60+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:79+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:96+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:97+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:98+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-	}
-	if(value == 6){
-		[[self.view viewWithTag:20+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:39+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:58+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:59+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:60+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:77+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:79+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:96+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:97+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:98+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-	}
-	if(value == 7){
-		[[self.view viewWithTag:20+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:21+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:22+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:41+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:60+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:79+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:98+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-	}
-	if(value == 8){
-		[[self.view viewWithTag:20+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:21+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:22+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:39+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:41+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:58+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:59+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:60+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:77+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:79+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:96+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:97+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:98+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-	}
-	if(value == 9){
-		[[self.view viewWithTag:20+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:21+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:22+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:39+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:41+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:58+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:59+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:60+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:79+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:98+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-	}
-	if(value == 0){
-		[[self.view viewWithTag:20+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:21+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:22+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:39+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:41+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:58+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:60+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:77+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:79+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:96+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:97+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-		[[self.view viewWithTag:98+tagMod] setBackgroundColor:[UIColor colorWithPatternImage:gridCellImage]];
-	}
+    UIColor *colorImage =[UIColor colorWithPatternImage:gridCellImage];
+    if(value == 1){
+        [(UIImageView*)[self.view viewWithTag:21+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:40+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:50+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:59+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:78+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:97+tagMod] setImage:gridCellImage];
+    }
+    if(value == 2){
+        [(UIImageView*)[self.view viewWithTag:20+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:21+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:22+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:41+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:58+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:59+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:60+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:77+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:96+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:97+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:98+tagMod] setImage:gridCellImage];
+    }
+    if(value == 3){
+        [(UIImageView*)[self.view viewWithTag:20+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:21+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:22+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:41+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:58+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:59+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:60+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:79+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:96+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:97+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:98+tagMod] setImage:gridCellImage];
+    }
+    if(value == 4){
+        [(UIImageView*)[self.view viewWithTag:20+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:22+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:39+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:41+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:58+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:59+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:60+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:79+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:98+tagMod] setImage:gridCellImage];
+    }
+    if(value == 5){
+        [(UIImageView*)[self.view viewWithTag:20+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:21+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:22+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:39+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:58+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:59+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:60+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:79+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:96+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:97+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:98+tagMod] setImage:gridCellImage];
+    }
+    if(value == 6){
+        [(UIImageView*)[self.view viewWithTag:20+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:39+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:58+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:59+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:60+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:77+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:79+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:96+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:97+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:98+tagMod] setImage:gridCellImage];
+    }
+    if(value == 7){
+        [(UIImageView*)[self.view viewWithTag:20+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:21+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:22+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:41+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:60+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:79+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:98+tagMod] setImage:gridCellImage];
+    }
+    if(value == 8){
+        [(UIImageView*)[self.view viewWithTag:20+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:21+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:22+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:39+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:41+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:58+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:59+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:60+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:77+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:79+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:96+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:97+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:98+tagMod] setImage:gridCellImage];
+    }
+    if(value == 9){
+        [(UIImageView*)[self.view viewWithTag:20+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:21+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:22+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:39+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:41+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:58+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:59+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:60+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:79+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:98+tagMod] setImage:gridCellImage];
+    }
+    if(value == 0){
+        [(UIImageView*)[self.view viewWithTag:20+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:21+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:22+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:39+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:41+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:58+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:60+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:77+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:79+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:96+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:97+tagMod] setImage:gridCellImage];
+        [(UIImageView*)[self.view viewWithTag:98+tagMod] setImage:gridCellImage];
+    }
 }
 
 -(void)timeTic
@@ -272,8 +273,10 @@ int filterActive = 0;
 //		[[self.view viewWithTag:0] setBackgroundColor:[UIColor blackColor]];
 //	}
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.left.jpg",modeCurrent]]];
-	[self timeTic];
-	[self templateGridFlash];
+	
+	
+    [self timeTic];
+    [self templateGridFlash];
 	
 	NSLog(@"Filter Active: %d",filterActive);
 	
