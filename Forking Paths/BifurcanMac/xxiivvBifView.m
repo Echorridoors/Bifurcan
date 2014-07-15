@@ -293,11 +293,13 @@ static BOOL chars[10][15] = {
 		[audioPlayerAmbience play];
 	}
 	else{
-		audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:nil];
-		audioPlayer.volume = 0.5;
-		audioPlayer.numberOfLoops = 0;
-		[audioPlayer prepareToPlay];
-		[audioPlayer play];
+        if(!audioPlayer || !audioPlayer.isPlaying) {
+            audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:nil];
+            audioPlayer.volume = 0.5;
+            audioPlayer.numberOfLoops = 0;
+            [audioPlayer prepareToPlay];
+            [audioPlayer play];
+        }
 	}
     });
 }
