@@ -6,11 +6,44 @@
 //  Copyright (c) 2014 XXIIVV. All rights reserved.
 //
 
+
+#if TARGET_OS_IPHONE
+#define imageType UIImage
+#define rectType  CGRect
+#define colorType  UIColor
+#define viewType  UIView
+#else
+#define imageType NSImage
+#define rectType  NSRect
+#define colorType  NSColor
+#define viewType   NSView
+#endif
+
+
+#import <AVFoundation/AVFoundation.h>
+
+#if TARGET_OS_IPHONE
+
+#import <UIKit/UIKit.h>
+
+#else
+
 #import <Cocoa/Cocoa.h>
 
-@interface xxiivvBifView : NSView
+#endif
+
+
+@interface xxiivvBifView : viewType
 {
-    NSImage *left;
-    NSImage *right;
+    imageType *left;
+    imageType *right;
+    
+    AVAudioPlayer *audioPlayer;
+    AVAudioPlayer *audioPlayerAmbience;
+    
+    NSTimer *timer;
 }
 @end
+
+
+
