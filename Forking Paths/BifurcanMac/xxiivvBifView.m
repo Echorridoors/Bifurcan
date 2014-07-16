@@ -27,10 +27,39 @@ int modeCurrent = 0;
     return self;
 }
 
+-(void)setSound:(bool)shouldSound {
+    soundEnabled = shouldSound;
+    if(soundEnabled) {
+        [self playSoundNamed:@"ambience":1];
+         audioPlayerAmbience.volume = 1;
+         audioPlayer.volume = 1;
+    }
+    else {
+        if(audioPlayerAmbience) {
+            [audioPlayerAmbience stop];
+        }
+        if(audioPlayer) {
+            [audioPlayer stop];
+        }
+    }
+}
 
 -(void)awakeFromNib {
     [super awakeFromNib];
     [self startup];
+}
+
+-(imageType*) getImage:(NSString*)name { //imageNamed: doesn't work in screensavers
+    imageType* image = [imageType imageNamed:name];
+    image = nil;
+    if(!image) {
+        NSBundle *programBundle = [NSBundle bundleForClass:[self class]];
+        NSString *path = [programBundle pathForResource:name ofType:@"png"];
+        image =  [[imageType alloc] initWithContentsOfFile:path];
+    }
+    
+    return image;
+    
 }
 
 -(void)startup {
@@ -49,14 +78,12 @@ int modeCurrent = 0;
         #endif
         
         
-        
-        left = [imageType imageNamed:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
-        right = [imageType imageNamed:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
+        left =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
+        right =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
     }
+    [self setSound:true];
     
-    [self playSoundNamed:@"ambience":1];
-	audioPlayerAmbience.volume = 1;
-	audioPlayer.volume = 1;
+    [self refresh];
     
 }
 
@@ -79,8 +106,8 @@ int modeCurrent = 0;
 -(void)nextFilter {
     modeCurrent++;
     modeCurrent%=6;
-    left = [imageType imageNamed:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
-    right = [imageType imageNamed:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
+    left =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
+    right =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
     [self tic];
 }
 
@@ -88,7 +115,7 @@ int modeCurrent = 0;
 - (void)drawRect:(rectType)dirtyRect
 {
     
-    
+    //NSLog(@"%d,%d,,%d,%d",(int)dirtyRect.origin.x,(int)dirtyRect.origin.y,(int)dirtyRect.size.width,(int)dirtyRect.size.height);
     [super drawRect:dirtyRect];
     
     // Drawing code here.
@@ -113,6 +140,7 @@ int modeCurrent = 0;
     
     
     colorType *backColor = [colorType colorWithPatternImage:left];
+    //backColor = [colorType whiteColor];
     [backColor set];
     
     #if TARGET_OS_IPHONE
@@ -148,70 +176,70 @@ int modeCurrent = 0;
 
 
 static BOOL chars[10][15] = {
-    {
+    {//0
         true,true,true,
         true,false,true,
         true,false,true,
         true,false,true,
         true,true,true
     },
-    {
+    {//1
         false,true,false,
         false,true,false,
         false,true,false,
         false,true,false,
         false,true,false
     },
-    {
+    {//2
         true,true,true,
         false,false,true,
         true,true,true,
         true,false,false,
         true,true,true
     },
-    {
+    {//3
         true,true,true,
         false,false,true,
         true,true,true,
         false,false,true,
         true,true,true
     },
-    {
+    {//4
         true,false,true,
         true,false,true,
         true,true,true,
         false,false,true,
         false,false,true
     },
-    {
+    {//5
         true,true,true,
         true,false,false,
         true,true,true,
         false,false,true,
         true,true,true
     },
-    {
+    {//6
         true,false,false,
+        true,false,false,
+        true,true,true,
+        true,false,true,
+        true,true,true
+    },
+    {//7
+        true,true,true,
+        false,false,true,
+        false,false,true,
+        false,false,true,
+        false,false,true
+    },
+    {//8
+        true,true,true,
         true,false,true,
         true,true,true,
         true,false,true,
         true,true,true
     },
-    {
-        true,true,true,
-        false,false,true,
-        false,false,true,
-        false,false,true,
-        false,true,true
-    },
-    {
-        true,true,true,
-        true,false,true,
-        true,true,true,
-        true,false,true,
-        true,true,true
-    },
-    {
+    {//9
         true,true,true,
         true,false,true,
         true,true,true,
@@ -278,31 +306,38 @@ static BOOL chars[10][15] = {
 
 - (void)playSoundNamed:(NSString*)name :(int)loop
 {
+    if(!soundEnabled)
+        return;
 	//NSLog(@" AUDIO | Playing sound: %@",name);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         
         
-	NSString* audioPath = [[NSBundle mainBundle] pathForResource:name ofType:@"wav"];
-	NSURL* audioUrl = [NSURL fileURLWithPath:audioPath];
-	
-	if(loop == 1){
-		audioPlayerAmbience = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:nil];
-		audioPlayerAmbience.volume = 1;
-		audioPlayerAmbience.numberOfLoops = -1;
-		[audioPlayerAmbience prepareToPlay];
-		[audioPlayerAmbience play];
-	}
-	else{
-        if(!audioPlayer || !audioPlayer.isPlaying) {
-            audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:nil];
-            audioPlayer.volume = 0.5;
-            audioPlayer.numberOfLoops = 0;
-            [audioPlayer prepareToPlay];
-            [audioPlayer play];
+        NSString* audioPath = [[NSBundle mainBundle] pathForResource:name ofType:@"wav"];
+        if(audioPath) {
+            NSURL* audioUrl = [NSURL fileURLWithPath:audioPath];
+        
+            if(loop == 1){
+                audioPlayerAmbience = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:nil];
+                audioPlayerAmbience.volume = 1;
+                audioPlayerAmbience.numberOfLoops = -1;
+                [audioPlayerAmbience prepareToPlay];
+                [audioPlayerAmbience play];
+            }
+            else{
+                if(!audioPlayer || !audioPlayer.isPlaying) {
+                    if(!audioPlayer) {
+                        audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:nil];
+                        audioPlayer.volume = 0.5;
+                        audioPlayer.numberOfLoops = 0;
+                    }
+                    [audioPlayer prepareToPlay];
+                    [audioPlayer play];
+                }
+            }
         }
-	}
     });
 }
+
 
 
 @end

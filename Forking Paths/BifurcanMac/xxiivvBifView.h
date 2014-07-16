@@ -42,7 +42,11 @@
     AVAudioPlayer *audioPlayerAmbience;
     
     NSTimer *timer;
+    bool soundEnabled;
 }
+
+-(void)setSound:(bool)shouldSound;
+
 @end
 
 
