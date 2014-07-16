@@ -31,6 +31,9 @@
 		03EE74611824CAE700AB60C0 /* xxiivvViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EE74601824CAE700AB60C0 /* xxiivvViewController.m */; };
 		03EE74631824CAE700AB60C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03EE74621824CAE700AB60C0 /* Images.xcassets */; };
 		580A03D91974AE9400F4111C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580A03D81974AE9400F4111C /* AVFoundation.framework */; };
+		5819DB0F19762B23005DE70B /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 5819DB0D19762B23005DE70B /* thumbnail.png */; };
+		5819DB1019762B23005DE70B /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5819DB0E19762B23005DE70B /* thumbnail@2x.png */; };
+		584EDA8919761E8400F4BE11 /* ConfigureSheet.nib in Resources */ = {isa = PBXBuildFile; fileRef = 584EDA8819761E8400F4BE11 /* ConfigureSheet.nib */; };
 		5896868C197351C3007873BF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5896868B197351C3007873BF /* Cocoa.framework */; };
 		58968696197351C4007873BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58968694197351C4007873BF /* InfoPlist.strings */; };
 		58968698197351C4007873BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58968697197351C4007873BF /* main.m */; };
@@ -43,6 +46,7 @@
 		589686D71973627C007873BF /* click.low.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03C8CD0E1954757B00E3E267 /* click.low.wav */; };
 		589686D819736281007873BF /* ambience.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03B0837319548883003A7DB7 /* ambience.wav */; };
 		589686DB197395EB007873BF /* xxiivvBifView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589686DA197395EB007873BF /* xxiivvBifView.m */; };
+		58A9C0DD197625700020BFC7 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58A9C0DC197625700020BFC7 /* UserDefaults.plist */; };
 		58ACA55A1974EE2100D99EE1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5896868B197351C3007873BF /* Cocoa.framework */; };
 		58ACA55C1974EE2100D99EE1 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ACA55B1974EE2100D99EE1 /* ScreenSaver.framework */; };
 		58ACA5621974EE2100D99EE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58ACA5601974EE2100D99EE1 /* InfoPlist.strings */; };
@@ -160,6 +164,9 @@
 		03EE74621824CAE700AB60C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		03EE74691824CAE700AB60C0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		580A03D81974AE9400F4111C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		5819DB0D19762B23005DE70B /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
+		5819DB0E19762B23005DE70B /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
+		584EDA8819761E8400F4BE11 /* ConfigureSheet.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ConfigureSheet.nib; sourceTree = "<group>"; };
 		5896868A197351C3007873BF /* BifurcanMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BifurcanMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5896868B197351C3007873BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5896868E197351C3007873BF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -176,6 +183,7 @@
 		589686A3197351C4007873BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		589686D9197395EB007873BF /* xxiivvBifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xxiivvBifView.h; path = BifurcanMac/xxiivvBifView.h; sourceTree = "<group>"; };
 		589686DA197395EB007873BF /* xxiivvBifView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xxiivvBifView.m; path = BifurcanMac/xxiivvBifView.m; sourceTree = "<group>"; };
+		58A9C0DC197625700020BFC7 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
 		58ACA5591974EE2100D99EE1 /* BifurcanSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BifurcanSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		58ACA55B1974EE2100D99EE1 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = Library/Frameworks/ScreenSaver.framework; sourceTree = DEVELOPER_DIR; };
 		58ACA55F1974EE2100D99EE1 /* BifurcanSaver-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BifurcanSaver-Info.plist"; sourceTree = "<group>"; };
@@ -376,6 +384,10 @@
 		58ACA55D1974EE2100D99EE1 /* BifurcanSaver */ = {
 			isa = PBXGroup;
 			children = (
+				5819DB0D19762B23005DE70B /* thumbnail.png */,
+				5819DB0E19762B23005DE70B /* thumbnail@2x.png */,
+				584EDA8819761E8400F4BE11 /* ConfigureSheet.nib */,
+				58A9C0DC197625700020BFC7 /* UserDefaults.plist */,
 				58ACA5641974EE2100D99EE1 /* BifurcanSaverView.h */,
 				58ACA5651974EE2100D99EE1 /* BifurcanSaverView.m */,
 				58ACA55E1974EE2100D99EE1 /* Supporting Files */,
@@ -610,8 +622,11 @@
 			files = (
 				58ACA56B1974EF2100D99EE1 /* click.fast.wav in Resources */,
 				58ACA56A1974EF2100D99EE1 /* ambience.wav in Resources */,
+				5819DB1019762B23005DE70B /* thumbnail@2x.png in Resources */,
 				58ACA59C1974EF3000D99EE1 /* 6.left.png in Resources */,
 				58ACA58D1974EF3000D99EE1 /* 2.left@2x.png in Resources */,
+				5819DB0F19762B23005DE70B /* thumbnail.png in Resources */,
+				58A9C0DD197625700020BFC7 /* UserDefaults.plist in Resources */,
 				58ACA5981974EF3000D99EE1 /* 5.left.png in Resources */,
 				58ACA5971974EF3000D99EE1 /* 4.right@2x.png in Resources */,
 				58ACA56D1974EF2100D99EE1 /* click.low.wav in Resources */,
@@ -632,6 +647,7 @@
 				58ACA5931974EF3000D99EE1 /* 3.right@2x.png in Resources */,
 				58ACA59B1974EF3000D99EE1 /* 5.right@2x.png in Resources */,
 				58ACA5991974EF3000D99EE1 /* 5.left@2x.png in Resources */,
+				584EDA8919761E8400F4BE11 /* ConfigureSheet.nib in Resources */,
 				58ACA5941974EF3000D99EE1 /* 4.left.png in Resources */,
 				58ACA5921974EF3000D99EE1 /* 3.right.png in Resources */,
 				58ACA58B1974EF3000D99EE1 /* 1.right@2x.png in Resources */,

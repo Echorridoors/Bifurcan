@@ -44,7 +44,7 @@
     NSTimer *timer;
     bool soundEnabled;
 }
-
+-(void)setFilterType:(int)filterType;
 -(void)setSound:(bool)shouldSound;
 
 @end

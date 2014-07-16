@@ -10,6 +10,7 @@
 #import "xxiivvBifView.h"
 @interface BifurcanSaverView : ScreenSaverView
 {
+    IBOutlet id configSheet;
     xxiivvBifView* bifView;
 }
 @end

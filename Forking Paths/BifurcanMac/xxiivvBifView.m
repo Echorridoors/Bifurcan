@@ -103,6 +103,14 @@ int modeCurrent = 0;
     
 }
 
+-(void)setFilterType:(int)filterType {
+    modeCurrent = filterType;
+    modeCurrent%=6;
+    left =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
+    right =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
+    [self tic];
+}
+
 -(void)nextFilter {
     modeCurrent++;
     modeCurrent%=6;

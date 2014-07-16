@@ -14,9 +14,24 @@
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
+        
+        NSString *userDefaultsValuesPath;
+        NSDictionary *userDefaultsValuesDict;
+        
+        // load the default values for the user defaults
+        userDefaultsValuesPath=[[NSBundle mainBundle] pathForResource:@"UserDefaults"
+                                                               ofType:@"plist"];
+        userDefaultsValuesDict=[NSDictionary dictionaryWithContentsOfFile:userDefaultsValuesPath];
+        
+        
+        // Set the initial values in the shared user defaults controller
+        [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:userDefaultsValuesDict];
+        
         [self setAnimationTimeInterval:1.0];
         bifView = [[xxiivvBifView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         [bifView setSound:false];
+        
+        [bifView setFilterType:(int)[[[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"filterType"] integerValue] ];
         [self addSubview:bifView];
         [self setNeedsDisplay:YES];
         [self setWantsLayer:YES];
@@ -38,14 +53,8 @@
 
 - (void)drawRect:(NSRect)rect
 {
-    [[NSColor blueColor] set];
-    //[bifView setFrame:rect];
-    NSRectFill(rect);
+     [bifView setFilterType:(int)[[[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"filterType"] integerValue] ];
     [super drawRect:rect];
-    //[bifView drawRect:rect];
-    [[NSColor blueColor] set];
-    //[bifView setFrame:rect];
-    NSRectFill(rect);
 }
 
 - (void)animateOneFrame
@@ -56,12 +65,32 @@
 
 - (BOOL)hasConfigureSheet
 {
-    return NO;
+    return YES  ;
 }
 
-- (NSWindow*)configureSheet
+- (NSWindow *)configureSheet
 {
-    return nil;
+    if (!configSheet)
+    {
+        if (![NSBundle loadNibNamed:@"ConfigureSheet" owner:self])
+        {
+            NSLog( @"Failed to load configure sheet." );
+            NSBeep();
+        }
+    }
+    
+    return configSheet;
+}
+
+- (IBAction)cancelClick:(id)sender
+{
+    [[NSApplication sharedApplication] endSheet:configSheet];
+}
+
+- (IBAction) okClick: (id)sender
+{
+    
+    [[NSApplication sharedApplication] endSheet:configSheet];
 }
 
 - (void)setFrameSize:(NSSize)newSize
