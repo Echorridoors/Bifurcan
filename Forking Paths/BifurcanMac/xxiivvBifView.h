@@ -43,6 +43,7 @@
     
     NSTimer *timer;
     bool soundEnabled;
+    int mody;
 }
 -(void)setFilterType:(int)filterType;
 -(void)setSound:(bool)shouldSound;

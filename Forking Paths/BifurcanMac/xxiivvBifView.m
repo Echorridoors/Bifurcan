@@ -51,7 +51,6 @@ int modeCurrent = 0;
 
 -(imageType*) getImage:(NSString*)name { //imageNamed: doesn't work in screensavers
     imageType* image = [imageType imageNamed:name];
-    image = nil;
     if(!image) {
         NSBundle *programBundle = [NSBundle bundleForClass:[self class]];
         NSString *path = [programBundle pathForResource:name ofType:@"png"];
@@ -122,7 +121,6 @@ int modeCurrent = 0;
 
 - (void)drawRect:(rectType)dirtyRect
 {
-    
     //NSLog(@"%d,%d,,%d,%d",(int)dirtyRect.origin.x,(int)dirtyRect.origin.y,(int)dirtyRect.size.width,(int)dirtyRect.size.height);
     [super drawRect:dirtyRect];
     
