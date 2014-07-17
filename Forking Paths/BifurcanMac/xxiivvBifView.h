@@ -35,15 +35,20 @@
 
 @interface xxiivvBifView : viewType
 {
+    imageType *srcleft;
+    imageType *srcright;
+    
     imageType *left;
     imageType *right;
+    
+    float lastGridSize;
     
     AVAudioPlayer *audioPlayer;
     AVAudioPlayer *audioPlayerAmbience;
     
     NSTimer *timer;
     bool soundEnabled;
-    int mody;
+    int modeCurrent;
 }
 -(void)setFilterType:(int)filterType;
 -(void)setSound:(bool)shouldSound;

@@ -269,6 +269,7 @@
 		03EE743E1824CAE700AB60C0 = {
 			isa = PBXGroup;
 			children = (
+				58F593B219775FDC00642FD6 /* iPad */,
 				58ACA5521974B4EC00D99EE1 /* Common */,
 				58F3B7AB1974A894004A884A /* images */,
 				03EE74501824CAE700AB60C0 /* Forking Paths */,
@@ -434,6 +435,13 @@
 				58F3B7C31974A894004A884A /* 6.right@2x.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		58F593B219775FDC00642FD6 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -842,6 +850,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = Bifurcan;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -857,6 +866,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = Bifurcan;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

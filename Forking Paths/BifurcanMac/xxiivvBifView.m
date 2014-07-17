@@ -8,8 +8,6 @@
 
 #import "xxiivvBifView.h"
 
-int modeCurrent = 0;
-
 
 
 
@@ -63,7 +61,7 @@ int modeCurrent = 0;
 
 -(void)startup {
     
-    if(!left) {
+    if(!srcleft) {
         
         NSRunLoop *runloop = [NSRunLoop currentRunLoop];
         timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(tic) userInfo:nil repeats:YES];
@@ -77,9 +75,10 @@ int modeCurrent = 0;
         #endif
         
         
-        left =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
-        right =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
+        srcleft =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
+        srcright =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
     }
+    modeCurrent=0;
     [self setSound:true];
     
     [self refresh];
@@ -105,16 +104,18 @@ int modeCurrent = 0;
 -(void)setFilterType:(int)filterType {
     modeCurrent = filterType;
     modeCurrent%=6;
-    left =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
-    right =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
+    srcleft =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
+    srcright =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
+    lastGridSize = 0;
     [self tic];
 }
 
 -(void)nextFilter {
     modeCurrent++;
     modeCurrent%=6;
-    left =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
-    right =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
+    srcleft =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
+    srcright =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
+    lastGridSize = 0;
     [self tic];
 }
 
@@ -124,25 +125,37 @@ int modeCurrent = 0;
     //NSLog(@"%d,%d,,%d,%d",(int)dirtyRect.origin.x,(int)dirtyRect.origin.y,(int)dirtyRect.size.width,(int)dirtyRect.size.height);
     [super drawRect:dirtyRect];
     
-    // Drawing code here.
+    float gridSize = srcleft.size.width;
     
-    /*int mywidth = self.bounds.size.width;
-    int myheight = self.bounds.size.height;
-    int xoff = mywidth%25;
-    int yoff = myheight%25;
-    mywidth-=mywidth%25;
-    myheight-=myheight%25;
     
-    CGRectMake(xoff/2, yoff/2, mywidth, myheight);*/
-    float xoff =fmodf(self.bounds.size.width/2 , 25) ;
-    float yoff =fmodf(self.bounds.size.height/2 , 25) ;
+    float maxSize = dirtyRect.size.width;
+    //if(dirtyRect.size.height<maxSize)
+        maxSize =dirtyRect.size.height;
+    
+    while (dirtyRect.size.height/(gridSize+25)>20 && dirtyRect.size.width/(gridSize+25)>12) {
+        gridSize+=25;
+    }
+    
+    if(gridSize==25) {
+        left = srcleft;
+        right = srcright;
+    }
+    else {
+        if(lastGridSize!=gridSize) {
+            left = [self imageResize:srcleft newSize:CGSizeMake(gridSize, gridSize)];
+            right = [self imageResize:srcright newSize:CGSizeMake(gridSize, gridSize)];
+            lastGridSize=gridSize;
+        }
+    }
+    
+    float xoff =fmodf(self.bounds.size.width/2 , gridSize) ;
+    float yoff =fmodf(self.bounds.size.height/2 , gridSize) ;
     
     #if TARGET_OS_IPHONE
-        CGContextSetPatternPhase(UIGraphicsGetCurrentContext(), CGSizeMake(xoff+12.5, yoff+12.5));
+        CGContextSetPatternPhase(UIGraphicsGetCurrentContext(), CGSizeMake(xoff+gridSize/2, yoff+gridSize/2));
     #else
-        [[NSGraphicsContext currentContext] setPatternPhase:NSMakePoint(xoff+12.5, yoff+12.5)];
+        [[NSGraphicsContext currentContext] setPatternPhase:NSMakePoint(xoff+gridSize/2, yoff+gridSize/2)];
     #endif
-    
     
     
     colorType *backColor = [colorType colorWithPatternImage:left];
@@ -170,12 +183,12 @@ int modeCurrent = 0;
 	//NSLog(@"TAC: %@", t_seco);
 	
 	
-	[self drawCharacter:1:[[t_hour substringWithRange:NSMakeRange(0, 1)] intValue]];
-	[self drawCharacter:2:[[t_hour substringWithRange:NSMakeRange(1, 1)] intValue]];
-	[self drawCharacter:3:[[t_minu substringWithRange:NSMakeRange(0, 1)] intValue]];
-	[self drawCharacter:4:[[t_minu substringWithRange:NSMakeRange(1, 1)] intValue]];
-	[self drawCharacter:5:[[t_seco substringWithRange:NSMakeRange(0, 1)] intValue]];
-	[self drawCharacter:6:[[t_seco substringWithRange:NSMakeRange(1, 1)] intValue]];
+	[self drawCharacter:1:[[t_hour substringWithRange:NSMakeRange(0, 1)] intValue] :gridSize];
+	[self drawCharacter:2:[[t_hour substringWithRange:NSMakeRange(1, 1)] intValue] :gridSize];
+	[self drawCharacter:3:[[t_minu substringWithRange:NSMakeRange(0, 1)] intValue] :gridSize];
+	[self drawCharacter:4:[[t_minu substringWithRange:NSMakeRange(1, 1)] intValue] :gridSize];
+	[self drawCharacter:5:[[t_seco substringWithRange:NSMakeRange(0, 1)] intValue] :gridSize];
+	[self drawCharacter:6:[[t_seco substringWithRange:NSMakeRange(1, 1)] intValue] :gridSize];
     
     
 }
@@ -255,7 +268,7 @@ static BOOL chars[10][15] = {
 };
 
 
--(void)drawCharacter :(int)character :(int)value {
+-(void)drawCharacter :(int)character :(int)value :(float)gridsize {
     
     
     
@@ -279,11 +292,11 @@ static BOOL chars[10][15] = {
         if(chars[value][i]) {
             float x = i%3+xOffset;
             float y = floorf(i/3)+yOffset;
-            x*=25;
-            y*=25;
-            x+=25;
-            y+=25;
-            CGRect rect = CGRectMake(self.bounds.size.width/2+x, (self.bounds.size.height/2)-y*flipper, 25, 25);
+            x*=gridsize;
+            y*=gridsize;
+            x+=gridsize;
+            y+=gridsize;
+            CGRect rect = CGRectMake(self.bounds.size.width/2+x, (self.bounds.size.height/2)-y*flipper, gridsize, gridsize);
             rect.origin.x = ceilf(rect.origin.x);
             rect.origin.y = ceilf(rect.origin.y);
             
@@ -343,6 +356,72 @@ static BOOL chars[10][15] = {
         }
     });
 }
+
+- (void) setFrame:(CGRect)frame
+{
+    // Call the parent class to move the view
+    [super setFrame:frame];
+    lastGridSize = 0;
+    // Do your custom code here.
+}
+
+#if TARGET_OS_IPHONE
+- (UIImage *)imageResize:(UIImage*)anImage
+                 newSize:(CGSize)size
+{
+    // Scalling selected image to targeted size
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(NULL, size.width*anImage.scale, size.height*anImage.scale, 8, 0, colorSpace, kCGImageAlphaPremultipliedLast);
+    CGContextClearRect(context, CGRectMake(0, 0, size.width*anImage.scale, size.height*anImage.scale));
+    CGContextSetInterpolationQuality(context, kCGInterpolationNone);
+    if(anImage.imageOrientation == UIImageOrientationRight)
+    {
+        CGContextRotateCTM(context, -M_PI_2);
+        CGContextTranslateCTM(context, -size.height, 0.0f);
+        CGContextDrawImage(context, CGRectMake(0, 0, size.height*anImage.scale, size.width*anImage.scale), anImage.CGImage);
+    }
+    else
+        CGContextDrawImage(context, CGRectMake(0, 0, size.width*anImage.scale, size.height*anImage.scale), anImage.CGImage);
+    
+    CGImageRef scaledImage=CGBitmapContextCreateImage(context);
+    
+    CGColorSpaceRelease(colorSpace);
+    CGContextRelease(context);
+    
+    UIImage *image = [UIImage imageWithCGImage:scaledImage scale:anImage.scale orientation:anImage.imageOrientation];
+    
+    CGImageRelease(scaledImage);
+    
+    
+    return image;
+}
+#else
+- (NSImage *)imageResize:(NSImage*)anImage
+                 newSize:(CGSize)newSize
+{
+    NSImage *sourceImage = anImage;
+    [sourceImage setScalesWhenResized:YES];
+    
+    // Report an error if the source isn't a valid image
+    if (![sourceImage isValid])
+    {
+        NSLog(@"Invalid Image");
+    } else
+    {
+        NSImage *smallImage = [[NSImage alloc] initWithSize: newSize];
+        [smallImage lockFocus];
+        [sourceImage setSize: newSize];
+        [[NSGraphicsContext currentContext] setImageInterpolation:NSImageInterpolationNone];
+        [sourceImage drawAtPoint:NSZeroPoint fromRect:NSZeroRect operation:NSCompositeCopy fraction:1.];
+        //[sourceImage compositeToPoint:NSZeroPoint operation:NSCompositeCopy];
+        [smallImage unlockFocus];
+        return smallImage;
+    }
+    return nil;
+}
+#endif
+
+
 
 
 
