@@ -25,6 +25,8 @@
 		0367E4C419664A9800CF5708 /* 5.right@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4C219664A9800CF5708 /* 5.right@2x.jpg */; };
 		0367E4C719664C7C00CF5708 /* 6.left@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4C519664C7C00CF5708 /* 6.left@2x.jpg */; };
 		0367E4C819664C7C00CF5708 /* 6.right@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0367E4C619664C7C00CF5708 /* 6.right@2x.jpg */; };
+		039F58B7197B11290097BDB9 /* 4.left@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 039F58B3197B11290097BDB9 /* 4.left@2x.jpg */; };
+		039F58B8197B11290097BDB9 /* 4.right@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 039F58B4197B11290097BDB9 /* 4.right@2x.jpg */; };
 		03B0837419548883003A7DB7 /* ambience.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03B0837319548883003A7DB7 /* ambience.wav */; };
 		03C6F68E1954B0D20012BABA /* segueFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C6F6871954B0D20012BABA /* segueFade.m */; };
 		03C6F68F1954B0D20012BABA /* splash.load.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C6F6881954B0D20012BABA /* splash.load.png */; };
@@ -86,6 +88,8 @@
 		0367E4C219664A9800CF5708 /* 5.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "5.right@2x.jpg"; path = "Images.xcassets/5.right@2x.jpg"; sourceTree = "<group>"; };
 		0367E4C519664C7C00CF5708 /* 6.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "6.left@2x.jpg"; path = "Images.xcassets/6.left@2x.jpg"; sourceTree = "<group>"; };
 		0367E4C619664C7C00CF5708 /* 6.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "6.right@2x.jpg"; path = "Images.xcassets/6.right@2x.jpg"; sourceTree = "<group>"; };
+		039F58B3197B11290097BDB9 /* 4.left@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "4.left@2x.jpg"; path = "Images.xcassets/4.left@2x.jpg"; sourceTree = "<group>"; };
+		039F58B4197B11290097BDB9 /* 4.right@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "4.right@2x.jpg"; path = "Images.xcassets/4.right@2x.jpg"; sourceTree = "<group>"; };
 		03B0837319548883003A7DB7 /* ambience.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ambience.wav; sourceTree = "<group>"; };
 		03C6F6861954B0D20012BABA /* segueFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segueFade.h; sourceTree = "<group>"; };
 		03C6F6871954B0D20012BABA /* segueFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = segueFade.m; sourceTree = "<group>"; };
@@ -234,6 +238,8 @@
 		03EE74501824CAE700AB60C0 /* Forking Paths */ = {
 			isa = PBXGroup;
 			children = (
+				039F58B3197B11290097BDB9 /* 4.left@2x.jpg */,
+				039F58B4197B11290097BDB9 /* 4.right@2x.jpg */,
 				033966931967ADC400685C88 /* 5.left.jpg */,
 				033966941967ADC400685C88 /* 5.right.jpg */,
 				033966951967ADC400685C88 /* 6.left.jpg */,
@@ -337,7 +343,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = xxiivv;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = XXIIVV;
 				TargetAttributes = {
 					03EE74671824CAE700AB60C0 = {
@@ -389,6 +395,7 @@
 				0339669E1967ADC400685C88 /* 6.right.jpg in Resources */,
 				0367E4C419664A9800CF5708 /* 5.right@2x.jpg in Resources */,
 				03B0837419548883003A7DB7 /* ambience.wav in Resources */,
+				039F58B8197B11290097BDB9 /* 4.right@2x.jpg in Resources */,
 				0367E4BB196637A900CF5708 /* 3.left@2x.jpg in Resources */,
 				0339669D1967ADC400685C88 /* 6.left.jpg in Resources */,
 				0367E4C819664C7C00CF5708 /* 6.right@2x.jpg in Resources */,
@@ -399,6 +406,7 @@
 				0367E4B61966341500CF5708 /* 1.right@2x.jpg in Resources */,
 				0367E4C719664C7C00CF5708 /* 6.left@2x.jpg in Resources */,
 				03C6F6921954B0D20012BABA /* splash.tune.wav in Resources */,
+				039F58B7197B11290097BDB9 /* 4.left@2x.jpg in Resources */,
 				0367E4BC196637A900CF5708 /* 3.right@2x.jpg in Resources */,
 				03C6F6901954B0D20012BABA /* splash.logo.png in Resources */,
 				03C6F68F1954B0D20012BABA /* splash.load.png in Resources */,
@@ -478,7 +486,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -518,7 +525,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -556,7 +562,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Forking Paths/Bifurcan-Prefix.pch";
 				INFOPLIST_FILE = "Forking Paths/Bifurcan-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Bifurcan;
 				PROVISIONING_PROFILE = "AFDDC3B7-BCF6-4C1E-816C-34327487935D";
 				WRAPPER_EXTENSION = app;
@@ -571,7 +577,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Forking Paths/Bifurcan-Prefix.pch";
 				INFOPLIST_FILE = "Forking Paths/Bifurcan-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Bifurcan;
 				PROVISIONING_PROFILE = "AFDDC3B7-BCF6-4C1E-816C-34327487935D";
 				WRAPPER_EXTENSION = app;
@@ -581,7 +587,6 @@
 		03EE747D1824CAE700AB60C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Forking Paths.app/Forking Paths";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -604,7 +609,6 @@
 		03EE747E1824CAE700AB60C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Forking Paths.app/Forking Paths";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

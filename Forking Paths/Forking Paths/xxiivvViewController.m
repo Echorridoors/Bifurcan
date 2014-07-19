@@ -258,6 +258,19 @@ int filterActive = 0;
 	
 	NSLog(@"%d",modeCurrent);
 	
+//	if( filterActive == 1 ){
+//		[self playSoundNamed:@"click.fast":0];
+//		filterActive = 0;
+//		[[self.view viewWithTag:0] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"left.jpg"]]];
+//		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"left.jpg"]];
+//		
+//	}
+//	else {
+//		[self playSoundNamed:@"click.low":0];
+//		filterActive = 1;
+//		self.view.backgroundColor = [UIColor blackColor];
+//		[[self.view viewWithTag:0] setBackgroundColor:[UIColor blackColor]];
+//	}
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.left.jpg",modeCurrent]]];
 	[self timeTic];
 	[self templateGridFlash];
@@ -281,7 +294,7 @@ int filterActive = 0;
 	
 	if(loop == 1){
 		audioPlayerAmbience = [[AVAudioPlayer alloc] initWithContentsOfURL:audioUrl error:nil];
-		audioPlayerAmbience.volume = 0;
+		audioPlayerAmbience.volume = 1;
 		audioPlayerAmbience.numberOfLoops = -1;
 		[audioPlayerAmbience prepareToPlay];
 		[audioPlayerAmbience play];
