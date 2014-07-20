@@ -78,6 +78,7 @@
         srcleft =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
         srcright =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
     }
+    doFlash=true;
     modeCurrent=0;
     [self setSound:true];
     
@@ -107,6 +108,7 @@
     srcleft =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
     srcright =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
     lastGridSize = 0;
+    doFlash=true;
     [self tic];
 }
 
@@ -116,6 +118,7 @@
     srcleft =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
     srcright =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
     lastGridSize = 0;
+    doFlash=true;
     [self tic];
 }
 
@@ -148,13 +151,15 @@
         }
     }
     
-    float xoff =fmodf(self.bounds.size.width/2 , gridSize) ;
-    float yoff =fmodf(self.bounds.size.height/2 , gridSize) ;
+    float xoff =fmodf(self.bounds.size.width/2 , gridSize)+gridSize/2 ;
+    float yoff =fmodf(self.bounds.size.height/2 , gridSize)+gridSize/2 ;
+    
+    
     
     #if TARGET_OS_IPHONE
-        CGContextSetPatternPhase(UIGraphicsGetCurrentContext(), CGSizeMake(xoff+gridSize/2, yoff+gridSize/2));
+        CGContextSetPatternPhase(UIGraphicsGetCurrentContext(), CGSizeMake(xoff, yoff));
     #else
-        [[NSGraphicsContext currentContext] setPatternPhase:NSMakePoint(xoff+gridSize/2, yoff+gridSize/2)];
+        [[NSGraphicsContext currentContext] setPatternPhase:NSMakePoint(xoff, yoff)];
     #endif
     
     
@@ -168,29 +173,30 @@
         NSRectFill(self.bounds);
     #endif
     
+    if(!doFlash) {
+        colorType *foreColor = [colorType colorWithPatternImage:right];
+        [foreColor set];
+        NSDate *currentTime = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH"]; // @"hh-mm"
+        NSString *t_hour = [dateFormatter stringFromDate: currentTime];
+        [dateFormatter setDateFormat:@"mm"]; // @"hh-mm"
+        NSString *t_minu = [dateFormatter stringFromDate: currentTime];
+        [dateFormatter setDateFormat:@"ss"]; // @"hh-mm"
+        NSString *t_seco = [dateFormatter stringFromDate: currentTime];
+        
+        //NSLog(@"TAC: %@", t_seco);
+        
+        
+        [self drawCharacter:1:[[t_hour substringWithRange:NSMakeRange(0, 1)] intValue] :gridSize];
+        [self drawCharacter:2:[[t_hour substringWithRange:NSMakeRange(1, 1)] intValue] :gridSize];
+        [self drawCharacter:3:[[t_minu substringWithRange:NSMakeRange(0, 1)] intValue] :gridSize];
+        [self drawCharacter:4:[[t_minu substringWithRange:NSMakeRange(1, 1)] intValue] :gridSize];
+        [self drawCharacter:5:[[t_seco substringWithRange:NSMakeRange(0, 1)] intValue] :gridSize];
+        [self drawCharacter:6:[[t_seco substringWithRange:NSMakeRange(1, 1)] intValue] :gridSize];
+    }
     
-    colorType *foreColor = [colorType colorWithPatternImage:right];
-    [foreColor set];
-    NSDate *currentTime = [NSDate date];
-	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setDateFormat:@"HH"]; // @"hh-mm"
-	NSString *t_hour = [dateFormatter stringFromDate: currentTime];
-	[dateFormatter setDateFormat:@"mm"]; // @"hh-mm"
-	NSString *t_minu = [dateFormatter stringFromDate: currentTime];
-	[dateFormatter setDateFormat:@"ss"]; // @"hh-mm"
-	NSString *t_seco = [dateFormatter stringFromDate: currentTime];
-	
-	//NSLog(@"TAC: %@", t_seco);
-	
-	
-	[self drawCharacter:1:[[t_hour substringWithRange:NSMakeRange(0, 1)] intValue] :gridSize];
-	[self drawCharacter:2:[[t_hour substringWithRange:NSMakeRange(1, 1)] intValue] :gridSize];
-	[self drawCharacter:3:[[t_minu substringWithRange:NSMakeRange(0, 1)] intValue] :gridSize];
-	[self drawCharacter:4:[[t_minu substringWithRange:NSMakeRange(1, 1)] intValue] :gridSize];
-	[self drawCharacter:5:[[t_seco substringWithRange:NSMakeRange(0, 1)] intValue] :gridSize];
-	[self drawCharacter:6:[[t_seco substringWithRange:NSMakeRange(1, 1)] intValue] :gridSize];
-    
-    
+    doFlash=false;
 }
 
 
@@ -297,8 +303,8 @@ static BOOL chars[10][15] = {
             x+=gridsize;
             y+=gridsize;
             CGRect rect = CGRectMake(self.bounds.size.width/2+x, (self.bounds.size.height/2)-y*flipper, gridsize, gridsize);
-            rect.origin.x = ceilf(rect.origin.x);
-            rect.origin.y = ceilf(rect.origin.y);
+            //rect.origin.x = ceilf(rect.origin.x);
+           // rect.origin.y = ceilf(rect.origin.y);
             
             #if TARGET_OS_IPHONE
                 UIRectFill(rect);

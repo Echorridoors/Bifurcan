@@ -46,6 +46,8 @@
     AVAudioPlayer *audioPlayer;
     AVAudioPlayer *audioPlayerAmbience;
     
+    BOOL doFlash;
+    
     NSTimer *timer;
     bool soundEnabled;
     int modeCurrent;
