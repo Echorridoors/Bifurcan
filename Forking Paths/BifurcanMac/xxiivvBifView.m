@@ -154,7 +154,8 @@
     float xoff =fmodf(self.bounds.size.width/2 , gridSize)+gridSize/2 ;
     float yoff =fmodf(self.bounds.size.height/2 , gridSize)+gridSize/2 ;
     
-    
+    xoff = ceilf(xoff);
+    yoff = ceilf(yoff);
     
     #if TARGET_OS_IPHONE
         CGContextSetPatternPhase(UIGraphicsGetCurrentContext(), CGSizeMake(xoff, yoff));
@@ -303,8 +304,8 @@ static BOOL chars[10][15] = {
             x+=gridsize;
             y+=gridsize;
             CGRect rect = CGRectMake(self.bounds.size.width/2+x, (self.bounds.size.height/2)-y*flipper, gridsize, gridsize);
-            //rect.origin.x = ceilf(rect.origin.x);
-           // rect.origin.y = ceilf(rect.origin.y);
+            rect.origin.x = ceilf(rect.origin.x);
+            rect.origin.y = ceilf(rect.origin.y);
             
             #if TARGET_OS_IPHONE
                 UIRectFill(rect);
@@ -377,7 +378,7 @@ static BOOL chars[10][15] = {
 {
     // Scalling selected image to targeted size
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef context = CGBitmapContextCreate(NULL, size.width*anImage.scale, size.height*anImage.scale, 8, 0, colorSpace, kCGImageAlphaPremultipliedLast);
+    CGContextRef context = CGBitmapContextCreate(NULL, size.width*anImage.scale, size.height*anImage.scale, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
     CGContextClearRect(context, CGRectMake(0, 0, size.width*anImage.scale, size.height*anImage.scale));
     CGContextSetInterpolationQuality(context, kCGInterpolationNone);
     if(anImage.imageOrientation == UIImageOrientationRight)
