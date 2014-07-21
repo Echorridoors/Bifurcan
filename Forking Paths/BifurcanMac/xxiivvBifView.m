@@ -102,23 +102,27 @@
     
 }
 
+-(void)loadFilter {
+    srcleft =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
+    srcright =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
+    left = nil;
+    right=nil;
+    lastGridSize = 0;
+    [self refresh];
+}
+
 -(void)setFilterType:(int)filterType {
     modeCurrent = filterType;
     modeCurrent%=6;
-    srcleft =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
-    srcright =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
-    lastGridSize = 0;
     doFlash=true;
-    [self tic];
+    [self loadFilter];
 }
 
 -(void)nextFilter {
     modeCurrent++;
     modeCurrent%=6;
-    srcleft =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
-    srcright =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
-    lastGridSize = 0;
     doFlash=true;
+    [self loadFilter];
     [self tic];
 }
 
@@ -139,16 +143,10 @@
         gridSize+=25;
     }
     
-    if(gridSize==25) {
-        left = srcleft;
-        right = srcright;
-    }
-    else {
-        if(lastGridSize!=gridSize) {
-            left = [self imageResize:srcleft newSize:CGSizeMake(gridSize, gridSize)];
-            right = [self imageResize:srcright newSize:CGSizeMake(gridSize, gridSize)];
-            lastGridSize=gridSize;
-        }
+    if(!left || !right || left.size.width!=gridSize) {
+        left = [self imageResize:srcleft newSize:CGSizeMake(gridSize, gridSize)];
+        right = [self imageResize:srcright newSize:CGSizeMake(gridSize, gridSize)];
+        lastGridSize=gridSize;
     }
     
     float xoff =fmodf(self.bounds.size.width/2 , gridSize)+gridSize/2 ;
@@ -321,7 +319,21 @@ static BOOL chars[10][15] = {
 }
 
 #if TARGET_OS_IPHONE
+
+CGPoint touchPoint;
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    if(touches.count>0) {
+        touchPoint = [((UITouch*)[touches allObjects][0]) locationInView:self];
+    }
+}
+
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    CGPoint newPoint = CGPointMake(-100, -100);
+    if(touches.count>0) {
+        newPoint = [((UITouch*)[touches allObjects][0]) locationInView:self];
+    }
+    if(powf(newPoint.x-touchPoint.x, 2)+powf(newPoint.y-touchPoint.y, 2)<40*40)
     [self nextFilter];
 }
 #else
@@ -356,8 +368,8 @@ static BOOL chars[10][15] = {
                         audioPlayer.volume = 0.5;
                         audioPlayer.numberOfLoops = 0;
                     }
-                    [audioPlayer prepareToPlay];
-                    [audioPlayer play];
+                    [audioPlayer performSelectorInBackground:@selector(prepareToPlay) withObject:nil];
+                    [audioPlayer performSelectorInBackground:@selector(play) withObject:nil];
                 }
             }
         }
@@ -373,7 +385,7 @@ static BOOL chars[10][15] = {
 }
 
 #if TARGET_OS_IPHONE
-- (UIImage *)imageResize:(UIImage*)anImage
+- (imageType *)imageResize:(UIImage*)anImage
                  newSize:(CGSize)size
 {
     // Scalling selected image to targeted size
@@ -404,29 +416,36 @@ static BOOL chars[10][15] = {
 }
 #else
 - (NSImage *)imageResize:(NSImage*)anImage
-                 newSize:(CGSize)newSize
+                   newSize:(CGSize)size
 {
-    NSImage *sourceImage = anImage;
-    [sourceImage setScalesWhenResized:YES];
+    // Scalling selected image to targeted size
+    float scale = [[[self window] screen] backingScaleFactor];
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(NULL, size.width*scale, size.height*scale, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+    CGContextClearRect(context, CGRectMake(0, 0, size.width*scale, size.height*scale));
+    CGContextSetInterpolationQuality(context, kCGInterpolationNone);
+    CGContextDrawImage(context, CGRectMake(0, 0, size.width*scale, size.height*scale), [anImage CGImageForProposedRect:nil context:nil hints:nil]);
+    CGImageRef scaledImage=CGBitmapContextCreateImage(context);
     
-    // Report an error if the source isn't a valid image
-    if (![sourceImage isValid])
-    {
-        NSLog(@"Invalid Image");
-    } else
-    {
-        NSImage *smallImage = [[NSImage alloc] initWithSize: newSize];
-        [smallImage lockFocus];
-        [sourceImage setSize: newSize];
-        [[NSGraphicsContext currentContext] setImageInterpolation:NSImageInterpolationNone];
-        [sourceImage drawAtPoint:NSZeroPoint fromRect:NSZeroRect operation:NSCompositeCopy fraction:1.];
-        //[sourceImage compositeToPoint:NSZeroPoint operation:NSCompositeCopy];
-        [smallImage unlockFocus];
-        return smallImage;
-    }
-    return nil;
+    CGColorSpaceRelease(colorSpace);
+    CGContextRelease(context);
+    
+    NSImage *image = [[NSImage alloc] initWithCGImage:scaledImage size:size];
+    
+    CGImageRelease(scaledImage);
+    
+    
+    return image;
 }
 #endif
+
+-(void)viewDidChangeBackingProperties {
+    //[super viewDidChangeBackingProperties];
+    if(srcleft!=nil) {
+    [self loadFilter];
+    }
+}
+
 
 
 
