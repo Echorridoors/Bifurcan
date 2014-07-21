@@ -52,6 +52,7 @@
     if(!image) {
         NSBundle *programBundle = [NSBundle bundleForClass:[self class]];
         NSString *path = [programBundle pathForResource:name ofType:@"png"];
+       // NSLog(@"path%@",name);
         image =  [[imageType alloc] initWithContentsOfFile:path];
     }
     
@@ -112,10 +113,12 @@
 }
 
 -(void)setFilterType:(int)filterType {
-    modeCurrent = filterType;
-    modeCurrent%=6;
-    doFlash=true;
-    [self loadFilter];
+    if(modeCurrent!=filterType) {
+        modeCurrent = filterType;
+        modeCurrent%=6;
+        doFlash=true;
+        [self loadFilter];
+    }
 }
 
 -(void)nextFilter {
@@ -134,6 +137,8 @@
     
     float gridSize = srcleft.size.width;
     
+    if(gridSize==0)
+        gridSize=25;
     
     float maxSize = dirtyRect.size.width;
     //if(dirtyRect.size.height<maxSize)
@@ -368,8 +373,8 @@ CGPoint touchPoint;
                         audioPlayer.volume = 0.5;
                         audioPlayer.numberOfLoops = 0;
                     }
-                    [audioPlayer performSelectorInBackground:@selector(prepareToPlay) withObject:nil];
-                    [audioPlayer performSelectorInBackground:@selector(play) withObject:nil];
+                    [audioPlayer performSelectorOnMainThread:@selector(prepareToPlay) withObject:nil waitUntilDone:NO];
+                    [audioPlayer performSelectorOnMainThread:@selector(play) withObject:nil waitUntilDone:NO];
                 }
             }
         }
@@ -420,6 +425,8 @@ CGPoint touchPoint;
 {
     // Scalling selected image to targeted size
     float scale = [[[self window] screen] backingScaleFactor];
+    if(scale<1)
+        scale = 1;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = CGBitmapContextCreate(NULL, size.width*scale, size.height*scale, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
     CGContextClearRect(context, CGRectMake(0, 0, size.width*scale, size.height*scale));
@@ -437,6 +444,7 @@ CGPoint touchPoint;
     
     return image;
 }
+
 #endif
 
 -(void)viewDidChangeBackingProperties {
