@@ -8,6 +8,7 @@
 
 #import "xxiivvBifView.h"
 
+NSString * const XXFilterChangedNotificaton = @"XXFilterChangedNotificaton";
 
 
 
@@ -60,9 +61,26 @@
     
 }
 
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:XXFilterChangedNotificaton object:nil];
+}
+
 -(void)startup {
     
     if(!srcleft) {
+        
+        NSMutableDictionary *defaults =[[NSMutableDictionary alloc] init];
+        
+        [defaults setValue:[NSNumber numberWithInt:0] forKey:@"filterMode"];
+        
+        [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+        
+        modeCurrent = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"filterMode"];
+        
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        
+        [center addObserver:self selector:@selector(handleFilterChangedNotification:)
+                       name:XXFilterChangedNotificaton object:nil];
         
         NSRunLoop *runloop = [NSRunLoop currentRunLoop];
         timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(tic) userInfo:nil repeats:YES];
@@ -103,6 +121,11 @@
     
 }
 
+-(void)handleFilterChangedNotification:(NSNotification*)aNotification {
+    int filterType = [(NSNumber*)[aNotification userInfo][@"xxFilterType"] intValue];
+    [self setFilterType:filterType];
+}
+
 -(void)loadFilter {
     srcleft =  [self getImage:[NSString stringWithFormat:@"%d.left",modeCurrent+1]];
     srcright =  [self getImage:[NSString stringWithFormat:@"%d.right",modeCurrent+1]];
@@ -110,6 +133,8 @@
     right=nil;
     lastGridSize = 0;
     [self refresh];
+    [[NSUserDefaults standardUserDefaults] setInteger:modeCurrent forKey:@"filterMode"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:XXFilterChangedNotificaton object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:modeCurrent] forKey:@"xxFilterType"]];
 }
 
 -(void)setFilterType:(int)filterType {
