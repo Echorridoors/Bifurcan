@@ -112,4 +112,10 @@ AVAudioPlayer *audioPlayerSplash;
 	}
 }
 
+- (NSUInteger) supportedInterfaceOrientations {
+    
+    return UIInterfaceOrientationMaskPortrait;
+    
+}
+
 @end

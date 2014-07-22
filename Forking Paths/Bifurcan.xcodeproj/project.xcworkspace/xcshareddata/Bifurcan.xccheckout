@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>DBE93577-7518-4858-9AED-DB6F1F07CEC4</string>
+	<string>5432343E-BFDC-45F4-B008-095B19B8465F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Bifurcan</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>70B4D7BF-7FC7-4160-AB04-ABA6246E8DED</key>
-		<string>https://github.com/aliceffekt/El-Jard-n-de-senderos-que-se-bifurcan.git</string>
+		<key>8FF0948E-92D9-4432-BD92-11B1670CD1CE</key>
+		<string>https://github.com/tekgo/Bifurcan.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Forking Paths/Bifurcan.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>70B4D7BF-7FC7-4160-AB04-ABA6246E8DED</key>
+		<key>8FF0948E-92D9-4432-BD92-11B1670CD1CE</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/aliceffekt/El-Jard-n-de-senderos-que-se-bifurcan.git</string>
+	<string>https://github.com/tekgo/Bifurcan.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>70B4D7BF-7FC7-4160-AB04-ABA6246E8DED</string>
+	<string>8FF0948E-92D9-4432-BD92-11B1670CD1CE</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>70B4D7BF-7FC7-4160-AB04-ABA6246E8DED</string>
+			<string>8FF0948E-92D9-4432-BD92-11B1670CD1CE</string>
 			<key>IDESourceControlWCCName</key>
-			<string>El-Jard-n-de-senderos-que-se-bifurcan</string>
+			<string>Bifurcan</string>
 		</dict>
 	</array>
 </dict>
