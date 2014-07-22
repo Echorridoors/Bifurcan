@@ -14,3 +14,6 @@ Todo:
 - Mac Screensaver icons
 - Mac icons
 - Clockface names for the screensaver config panel
+- Splash doesn't display on landscape iPad
+- No Splash on mac
+- About screen rtf file on mac should be edited
