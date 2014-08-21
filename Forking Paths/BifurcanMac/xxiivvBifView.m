@@ -29,7 +29,6 @@ NSString * const XXFilterChangedNotificaton = @"XXFilterChangedNotificaton";
 -(void)setSound:(bool)shouldSound {
     soundEnabled = shouldSound;
     if(soundEnabled) {
-        [self playSoundNamed:@"ambience":1];
          audioPlayerAmbience.volume = 1;
          audioPlayer.volume = 1;
     }
