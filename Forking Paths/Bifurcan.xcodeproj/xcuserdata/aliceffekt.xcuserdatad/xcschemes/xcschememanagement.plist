@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BifurcanMac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>BifurcanSaver.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Forking Paths.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +28,16 @@
 			<true/>
 		</dict>
 		<key>03EE74671824CAE700AB60C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58968689197351C3007873BF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58ACA5581974EE2100D99EE1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
