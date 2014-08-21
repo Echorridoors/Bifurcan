@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>5432343E-BFDC-45F4-B008-095B19B8465F</string>
+	<string>51B8B009-05DA-42CB-A14B-2BEB98093D57</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Bifurcan</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>8FF0948E-92D9-4432-BD92-11B1670CD1CE</key>
-		<string>https://github.com/tekgo/Bifurcan.git</string>
+		<key>0E2FC9B8-3F30-40A1-AFD7-3471C5FBE6A8</key>
+		<string>https://github.com/aliceffekt/Bifurcan.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Forking Paths/Bifurcan.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8FF0948E-92D9-4432-BD92-11B1670CD1CE</key>
+		<key>0E2FC9B8-3F30-40A1-AFD7-3471C5FBE6A8</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/tekgo/Bifurcan.git</string>
+	<string>https://github.com/aliceffekt/Bifurcan.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8FF0948E-92D9-4432-BD92-11B1670CD1CE</string>
+	<string>0E2FC9B8-3F30-40A1-AFD7-3471C5FBE6A8</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8FF0948E-92D9-4432-BD92-11B1670CD1CE</string>
+			<string>0E2FC9B8-3F30-40A1-AFD7-3471C5FBE6A8</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Bifurcan</string>
 		</dict>
