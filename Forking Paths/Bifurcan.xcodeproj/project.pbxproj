@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030EA14F19A8DB0800162E71 /* 6.left.png in Resources */ = {isa = PBXBuildFile; fileRef = 0397BC5619A692140069B069 /* 6.left.png */; };
+		030EA15019A8DB0800162E71 /* 6.left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0397BC5719A692140069B069 /* 6.left@2x.png */; };
+		030EA15119A8DB0800162E71 /* 6.right.png in Resources */ = {isa = PBXBuildFile; fileRef = 0397BC5819A692140069B069 /* 6.right.png */; };
+		030EA15219A8DB0800162E71 /* 6.right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0397BC5919A692140069B069 /* 6.right@2x.png */; };
+		030EA15319A8DB0900162E71 /* 6.left.png in Resources */ = {isa = PBXBuildFile; fileRef = 0397BC5619A692140069B069 /* 6.left.png */; };
+		030EA15419A8DB0900162E71 /* 6.left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0397BC5719A692140069B069 /* 6.left@2x.png */; };
+		030EA15519A8DB0900162E71 /* 6.right.png in Resources */ = {isa = PBXBuildFile; fileRef = 0397BC5819A692140069B069 /* 6.right.png */; };
+		030EA15619A8DB0900162E71 /* 6.right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0397BC5919A692140069B069 /* 6.right@2x.png */; };
 		0397BC5319A68F3F0069B069 /* icon.60.png in Resources */ = {isa = PBXBuildFile; fileRef = 0397BC5019A68F3F0069B069 /* icon.60.png */; };
 		0397BC5419A68F3F0069B069 /* icon.76.png in Resources */ = {isa = PBXBuildFile; fileRef = 0397BC5119A68F3F0069B069 /* icon.76.png */; };
 		0397BC5519A68F3F0069B069 /* icon.152.png in Resources */ = {isa = PBXBuildFile; fileRef = 0397BC5219A68F3F0069B069 /* icon.152.png */; };
@@ -594,21 +602,25 @@
 				589686D51973627C007873BF /* click.fast.wav in Resources */,
 				58ACA5801974EF2F00D99EE1 /* 5.left.png in Resources */,
 				58ACA5811974EF2F00D99EE1 /* 5.left@2x.png in Resources */,
+				030EA15219A8DB0800162E71 /* 6.right@2x.png in Resources */,
 				58ACA5741974EF2F00D99EE1 /* 2.left.png in Resources */,
 				58ACA5701974EF2F00D99EE1 /* 1.left.png in Resources */,
 				58ACA5761974EF2F00D99EE1 /* 2.right.png in Resources */,
 				589686D61973627C007873BF /* click.high.wav in Resources */,
+				030EA15019A8DB0800162E71 /* 6.left@2x.png in Resources */,
 				58ACA57A1974EF2F00D99EE1 /* 3.right.png in Resources */,
 				58ACA5731974EF2F00D99EE1 /* 1.right@2x.png in Resources */,
 				589686A4197351C4007873BF /* Images.xcassets in Resources */,
 				589686D71973627C007873BF /* click.low.wav in Resources */,
 				58ACA57C1974EF2F00D99EE1 /* 4.left.png in Resources */,
+				030EA14F19A8DB0800162E71 /* 6.left.png in Resources */,
 				58ACA5781974EF2F00D99EE1 /* 3.left.png in Resources */,
 				58ACA5771974EF2F00D99EE1 /* 2.right@2x.png in Resources */,
 				58ACA5711974EF2F00D99EE1 /* 1.left@2x.png in Resources */,
 				5896869C197351C4007873BF /* Credits.rtf in Resources */,
 				58ACA5821974EF2F00D99EE1 /* 5.right.png in Resources */,
 				58ACA5721974EF2F00D99EE1 /* 1.right.png in Resources */,
+				030EA15119A8DB0800162E71 /* 6.right.png in Resources */,
 				58ACA5751974EF2F00D99EE1 /* 2.left@2x.png in Resources */,
 				58ACA5831974EF2F00D99EE1 /* 5.right@2x.png in Resources */,
 				58ACA57B1974EF2F00D99EE1 /* 3.right@2x.png in Resources */,
@@ -623,6 +635,7 @@
 			files = (
 				58ACA56B1974EF2100D99EE1 /* click.fast.wav in Resources */,
 				5819DB1019762B23005DE70B /* thumbnail@2x.png in Resources */,
+				030EA15519A8DB0900162E71 /* 6.right.png in Resources */,
 				58ACA58D1974EF3000D99EE1 /* 2.left@2x.png in Resources */,
 				5819DB0F19762B23005DE70B /* thumbnail.png in Resources */,
 				58A9C0DD197625700020BFC7 /* UserDefaults.plist in Resources */,
@@ -633,11 +646,14 @@
 				58ACA5951974EF3000D99EE1 /* 4.left@2x.png in Resources */,
 				58ACA58A1974EF3000D99EE1 /* 1.right.png in Resources */,
 				58ACA56C1974EF2100D99EE1 /* click.high.wav in Resources */,
+				030EA15619A8DB0900162E71 /* 6.right@2x.png in Resources */,
 				58ACA5621974EE2100D99EE1 /* InfoPlist.strings in Resources */,
+				030EA15419A8DB0900162E71 /* 6.left@2x.png in Resources */,
 				58ACA58F1974EF3000D99EE1 /* 2.right@2x.png in Resources */,
 				58ACA5911974EF3000D99EE1 /* 3.left@2x.png in Resources */,
 				58ACA58C1974EF3000D99EE1 /* 2.left.png in Resources */,
 				58ACA5881974EF3000D99EE1 /* 1.left.png in Resources */,
+				030EA15319A8DB0900162E71 /* 6.left.png in Resources */,
 				58ACA5901974EF3000D99EE1 /* 3.left.png in Resources */,
 				58ACA5961974EF3000D99EE1 /* 4.right.png in Resources */,
 				58ACA5931974EF3000D99EE1 /* 3.right@2x.png in Resources */,
