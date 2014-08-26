@@ -8,6 +8,8 @@
 
 #import "BifurcanSaverView.h"
 
+static NSString * const MyModuleName = @"com.XXIIVV.bifurcansaver";
+
 @implementation BifurcanSaverView
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
@@ -16,22 +18,26 @@
     if (self) {
         
         NSString *userDefaultsValuesPath;
-        NSDictionary *userDefaultsValuesDict;
-        
-        // load the default values for the user defaults
-        userDefaultsValuesPath=[[NSBundle mainBundle] pathForResource:@"UserDefaults"
-                                                               ofType:@"plist"];
-        userDefaultsValuesDict=[NSDictionary dictionaryWithContentsOfFile:userDefaultsValuesPath];
         
         
-        // Set the initial values in the shared user defaults controller
-        [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:userDefaultsValuesDict];
+        ScreenSaverDefaults *defaults;
+        
+        defaults = [ScreenSaverDefaults defaultsForModuleWithName:MyModuleName];
+        
+        // Register our default values
+        [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
+                                    @0, @"filterType",
+                                    nil]];
+        
+        
         
         [self setAnimationTimeInterval:1.0];
         bifView = [[xxiivvBifView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         [bifView setSound:false];
         
-        [bifView setFilterType:(int)[[[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"filterType"] integerValue] ];
+        
+        [bifView setFilterType:(int)[defaults integerForKey:@"filterType"] ];
+        [defaults synchronize];
         [self addSubview:bifView];
         [self setNeedsDisplay:YES];
         [self setWantsLayer:YES];
@@ -42,6 +48,12 @@
 - (void)startAnimation
 {
     [super startAnimation];
+    ScreenSaverDefaults *defaults;
+    
+    defaults = [ScreenSaverDefaults defaultsForModuleWithName:MyModuleName];
+    
+    
+    [bifView setFilterType:(int)[defaults integerForKey:@"filterType"] ];
     //bifView = [[xxiivvBifView alloc] initWithFrame:self.frame];
     //[self addSubview:bifView];
 }
@@ -53,12 +65,24 @@
 
 - (void)drawRect:(NSRect)rect
 {
-     [bifView setFilterType:(int)[[[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"filterType"] integerValue] ];
+    
+    ScreenSaverDefaults *defaults;
+    
+    defaults = [ScreenSaverDefaults defaultsForModuleWithName:MyModuleName];
+    
+    
+     [bifView setFilterType:(int)[defaults integerForKey:@"filterType"] ];
     [super drawRect:rect];
 }
 
 - (void)animateOneFrame
 {
+    ScreenSaverDefaults *defaults;
+    
+    defaults = [ScreenSaverDefaults defaultsForModuleWithName:MyModuleName];
+    
+    
+    [bifView setFilterType:(int)[defaults integerForKey:@"filterType"] ];
     [self setNeedsDisplay:YES];
     return;
 }
@@ -77,6 +101,15 @@
             NSLog( @"Failed to load configure sheet." );
             NSBeep();
         }
+        
+        ScreenSaverDefaults *defaults;
+        
+        defaults = [ScreenSaverDefaults defaultsForModuleWithName:MyModuleName];
+        
+        [popupList selectItemAtIndex:[defaults integerForKey:@"filterType"]];
+        
+        [[NSApplication sharedApplication] endSheet:configSheet];
+        
     }
     
     return configSheet;
@@ -90,12 +123,25 @@
 - (IBAction) okClick: (id)sender
 {
     
+    ScreenSaverDefaults *defaults;
+    
+    defaults = [ScreenSaverDefaults defaultsForModuleWithName:MyModuleName];
+    
+    [defaults setInteger:[popupList selectedTag] forKey:@"filterType"];
+    //NSLog(@"butts:%d",[popupList selectedTag]);
+    [defaults synchronize];
     [[NSApplication sharedApplication] endSheet:configSheet];
 }
 
 - (void)setFrameSize:(NSSize)newSize
 {
     [super setFrameSize:newSize];
+    ScreenSaverDefaults *defaults;
+    
+    defaults = [ScreenSaverDefaults defaultsForModuleWithName:MyModuleName];
+    
+    
+    [bifView setFilterType:(int)[defaults integerForKey:@"filterType"] ];
     [bifView setFrameSize:newSize];
 }
 
