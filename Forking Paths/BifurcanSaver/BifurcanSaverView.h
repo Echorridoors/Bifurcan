@@ -11,6 +11,7 @@
 @interface BifurcanSaverView : ScreenSaverView
 {
     IBOutlet id configSheet;
+    IBOutlet NSPopUpButton *popupList;
     xxiivvBifView* bifView;
 }
 @end
