@@ -47,6 +47,29 @@ NSString * const XXFilterChangedNotificaton = @"XXFilterChangedNotificaton";
     [self startup];
 }
 
+-(float)getScreenScale {
+    #if TARGET_OS_IPHONE
+        return [[UIScreen mainScreen] scale];
+    #else
+        return [[[self window] screen] backingScaleFactor];
+    #endif
+    
+    return 1.0;
+}
+
+-(float)getImageScale:(imageType*)image  {
+    #if TARGET_OS_IPHONE
+        return image.scale;
+    #else
+        NSImageRep *rep = [[image representations] objectAtIndex:0];
+        NSSize imageSize = NSMakeSize(rep.pixelsWide, rep.pixelsHigh);
+        return imageSize.width/image.size.width;
+    #endif
+    
+    
+    return 1.0;
+}
+
 -(imageType*) getImage:(NSString*)name { //imageNamed: doesn't work in screensavers
     imageType* image = [imageType imageNamed:name];
     if(!image) {
@@ -55,7 +78,11 @@ NSString * const XXFilterChangedNotificaton = @"XXFilterChangedNotificaton";
        // NSLog(@"path%@",name);
         image =  [[imageType alloc] initWithContentsOfFile:path];
     }
-    
+    //#if TARGET_OS_IPHONE
+        float scale = [self getScreenScale];
+        if([self getImageScale:image] != scale)
+            image = [self scaleImage:image newScale:scale];
+    //#endif
     return image;
     
 }
@@ -168,9 +195,16 @@ NSString * const XXFilterChangedNotificaton = @"XXFilterChangedNotificaton";
     //if(dirtyRect.size.height<maxSize)
         maxSize =dirtyRect.size.height;
     
-    while (dirtyRect.size.height/(gridSize+25)>20 && dirtyRect.size.width/(gridSize+25)>12) {
+    float w = self.bounds.size.width;
+    float h = self.bounds.size.height;
+    
+    while (h/(gridSize+25)>20 && w/(gridSize+25)>12) {
         gridSize+=25;
     }
+    /*if(h>0 && w>0)
+    while ((h/(gridSize)<20 || w/(gridSize)<12) && gridSize>0) {
+        gridSize*=.5;
+    }*/
     
     if(!left || !right || left.size.width!=gridSize) {
         left = [self imageResize:srcleft newSize:CGSizeMake(gridSize, gridSize)];
@@ -413,6 +447,8 @@ CGPoint touchPoint;
     // Do your custom code here.
 }
 
+
+
 #if TARGET_OS_IPHONE
 - (imageType *)imageResize:(UIImage*)anImage
                  newSize:(CGSize)size
@@ -443,6 +479,36 @@ CGPoint touchPoint;
     
     return image;
 }
+
+- (imageType *)scaleImage:(imageType*)anImage newScale:(float)scale {
+    CGSize size = anImage.size;
+    // Scalling selected image to targeted size
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(NULL, size.width*scale, size.height*scale, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+    CGContextClearRect(context, CGRectMake(0, 0, size.width*scale, size.height*scale));
+    CGContextSetInterpolationQuality(context, kCGInterpolationNone);
+    if(anImage.imageOrientation == UIImageOrientationRight)
+    {
+        CGContextRotateCTM(context, -M_PI_2);
+        CGContextTranslateCTM(context, -size.height, 0.0f);
+        CGContextDrawImage(context, CGRectMake(0, 0, size.height*scale, size.width*scale), anImage.CGImage);
+    }
+    else
+        CGContextDrawImage(context, CGRectMake(0, 0, size.width*scale, size.height*scale), anImage.CGImage);
+    
+    CGImageRef scaledImage=CGBitmapContextCreateImage(context);
+    
+    CGColorSpaceRelease(colorSpace);
+    CGContextRelease(context);
+    
+    imageType *image = [imageType imageWithCGImage:scaledImage scale:scale orientation:anImage.imageOrientation];
+    
+    CGImageRelease(scaledImage);
+    
+    
+    return image;
+}
+
 #else
 - (NSImage *)imageResize:(NSImage*)anImage
                    newSize:(CGSize)size
@@ -451,6 +517,29 @@ CGPoint touchPoint;
     float scale = [[[self window] screen] backingScaleFactor];
     if(scale<1)
         scale = 1;
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(NULL, size.width*scale, size.height*scale, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+    CGContextClearRect(context, CGRectMake(0, 0, size.width*scale, size.height*scale));
+    if(size.width>anImage.size.width)
+        CGContextSetInterpolationQuality(context, kCGInterpolationNone);
+    else
+        CGContextSetInterpolationQuality(context, kCGInterpolationHigh);
+    CGContextDrawImage(context, CGRectMake(0, 0, size.width*scale, size.height*scale), [anImage CGImageForProposedRect:nil context:nil hints:nil]);
+    CGImageRef scaledImage=CGBitmapContextCreateImage(context);
+    
+    CGColorSpaceRelease(colorSpace);
+    CGContextRelease(context);
+    
+    NSImage *image = [[NSImage alloc] initWithCGImage:scaledImage size:size];
+    
+    CGImageRelease(scaledImage);
+    
+    
+    return image;
+}
+
+- (imageType *)scaleImage:(imageType*)anImage newScale:(float)scale {
+    CGSize size = anImage.size;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = CGBitmapContextCreate(NULL, size.width*scale, size.height*scale, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
     CGContextClearRect(context, CGRectMake(0, 0, size.width*scale, size.height*scale));
