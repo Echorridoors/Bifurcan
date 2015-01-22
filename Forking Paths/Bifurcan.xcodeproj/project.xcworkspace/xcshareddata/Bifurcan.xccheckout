@@ -11,17 +11,17 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>770B03709CCC92ACEA6EA803D2871C7BA3809E4A</key>
-		<string>https://github.com/tekgo/Bifurcan.git</string>
+		<string>https://github.com/aliceffekt/Bifurcan.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Forking Paths/Bifurcan.xcodeproj/project.xcworkspace</string>
+	<string>Forking Paths/Bifurcan.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>770B03709CCC92ACEA6EA803D2871C7BA3809E4A</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/tekgo/Bifurcan.git</string>
+	<string>https://github.com/aliceffekt/Bifurcan.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
