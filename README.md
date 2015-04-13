@@ -1,19 +1,9 @@
-Bifurcan
-========
-A fork of https://github.com/aliceffekt/Bifurcan that adds a Mac build and a Mac screensaver.
+# Bifurcan
 
-It also adds the following features:
-- Single NSView/UIView subclass for both operating systems
-- Airplay mirroring to Appletv from iOS devices
-- Support for any display size
-- Mac retina support
-- iPad Support
+Named after a Borges short of the same name, similarly to Entaloneralie, this application is a cryptic watchface for iOS. Every second, the labyrinth reorganize itself to display the time with its twists and turns. It takes a little practice to be able to see the patterns in the lines. Clicking on the screen will unveil the time as seen in this video.
 
-Todo:
-- iPad icons
-- Mac Screensaver icons
-- Mac icons
-- Clockface names for the screensaver config panel
-- Splash doesn't display on landscape iPad
-- No Splash on mac
-- About screen rtf file on mac should be edited
+Feel free to send pull requests if you find an issue that you wish to correct.
+
+## License
+
+See the [LICENSE](LICENSE.md) file for license rights and limitations (CC).
