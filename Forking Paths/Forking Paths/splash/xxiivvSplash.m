@@ -13,86 +13,121 @@
 
 AVAudioPlayer *audioPlayerSplash;
 
+UIImageView * logoView;
+UIView * ecosystemContainer;
+NSString* applicationName;
+NSString *supportUrl;
+
 @implementation splash
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+	[super viewDidLoad];
 	[self start];
 }
 
 -(void)start
 {
-	supportUrl = @"http://wiki.xxiivv.com/Bifurcan";
+	applicationName = @"bifurcan";
+	supportUrl = [NSString stringWithFormat:@"http://wiki.xxiivv.com/%@",applicationName];
 	
 	[self splashTemplate];
-	[self splashAnimate];
 	[self audioPlayerSplash:@"splash.tune.wav"];
-	[self apiContact:@"bifurcan":@"analytics":@"launch":@"1"];
-	[NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(splashClose) userInfo:nil repeats:NO];
+	[self apiContact:applicationName:@"analytics":@"launch":@"1"];
+	[NSTimer scheduledTimerWithTimeInterval:4.25 target:self selector:@selector(splashClose) userInfo:nil repeats:NO]; // Uncomment
+	
+	[self ecosystemCheck:[[self apiContact:applicationName:@"ecosystem":@"":@""] componentsSeparatedByString:@"|"]];
 }
 
 - (void) splashTemplate
 {
 	CGRect screen = [[UIScreen mainScreen] bounds];
-	float screenMargin = screen.size.width/4;
-
-	[self setImage:self.splashLogo :@"splash.logo.png"];
-	self.splashLogo.frame = CGRectMake(screenMargin, (screen.size.height/2)-(screenMargin/2)-10, screen.size.width-(2*screenMargin), screenMargin/2);
-	self.splashLogo.alpha = 0;
+	float screenMargin = screen.size.width/8;
 	
-	[self setImage:self.splashLoader :@"splash.load.png"];
-	self.splashLoader.frame = CGRectMake( (screen.size.width/2)-5, screen.size.height-(screenMargin/2), 10, 10);
+	// Create logo
+	logoView = [[UIImageView alloc] initWithFrame:CGRectMake((screen.size.width/2)-60, (screen.size.height/2)-60, 120, 120)];
+	logoView.image = [UIImage imageNamed:@"splash.logo.png"];
+	logoView.contentMode = UIViewContentModeCenter;
+	logoView.contentMode = UIViewContentModeScaleAspectFit;
+	[self.view addSubview:logoView];
 	
-	[self setImage:self.splashSupport :@"splash.support.png"];
-	self.splashSupport.frame = CGRectMake(screenMargin, screen.size.height-( screen.size.width-(2*screenMargin) ) , screen.size.width-(2*screenMargin), screen.size.width-(2*screenMargin));
-	self.splashSupport.alpha = 0;
+	// Create Support button
+	UIButton * supportButton = [[UIButton alloc] initWithFrame:CGRectMake(0, screen.size.height*0.80, screen.size.width, screenMargin)];
+	[supportButton setTitle:@"APPLICATION SUPPORT" forState:UIControlStateNormal];
+	supportButton.titleLabel.font = [UIFont fontWithName:@"DINAlternate-Bold" size:10];
+	[supportButton addTarget:self action:@selector(launchSupport) forControlEvents:UIControlEventTouchUpInside];
+	[supportButton setTitleColor:[UIColor colorWithWhite:1 alpha:0.5] forState:UIControlStateNormal];
+	[self.view addSubview:supportButton];
 	
-	self.btnSplashSupport.frame = CGRectMake(screenMargin, screen.size.height-( screen.size.width-(2*screenMargin) ) , screen.size.width-(2*screenMargin), screen.size.width-(2*screenMargin));
+	// Set default
+	logoView.frame = CGRectMake((screen.size.width/2)-60, (screen.size.height/2)-62.5, 120, 120);
+	logoView.alpha = 0;
+	supportButton.alpha = 0;
 	
-}
-
-- (void) splashAnimate
-{
-	CGRect screen = [[UIScreen mainScreen] bounds];
-	float screenMargin = screen.size.width/4;
-	
-	[UIView beginAnimations: @"Splash Intro" context:nil];
-	[UIView setAnimationDuration:2.5];
+	// Animate
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:1];
 	[UIView setAnimationDelay:0];
-	self.splashLogo.frame = CGRectMake(screenMargin, (screen.size.height/2)-(screenMargin/2), screen.size.width-(2*screenMargin), screenMargin/2);
-	self.splashLogo.alpha = 1;
-	self.splashSupport.alpha = 1;
+	logoView.frame = CGRectMake((screen.size.width/2)-60, (screen.size.height/2)-60, 120, 120);
+	logoView.alpha = 1;
+	supportButton.alpha = 1;
 	[UIView commitAnimations];
 	
-	blinker = [NSTimer scheduledTimerWithTimeInterval:0.04 target:self selector:@selector(blink) userInfo:nil repeats:YES];
+	ecosystemContainer = [[UIView alloc] initWithFrame:CGRectMake( (screen.size.width/2)-(screenMargin/2), -1*(screenMargin/2), screenMargin, screen.size.height)];
+	[self.view addSubview:ecosystemContainer];
 }
 
-- (void) blink
+-(void)ecosystemCheck :(NSArray*)schemesList
 {
-	if( self.splashLoader.alpha == 0 ){
-		self.splashLoader.alpha = 1;
+	if([schemesList count] < 2 ){
+		return;
 	}
-	else{
-		self.splashLoader.alpha = 0;
+	
+	CGFloat schemeIconTile = (ecosystemContainer.frame.size.width/4);
+	CGFloat schemeIconSize = (ecosystemContainer.frame.size.width/4)-5;
+	
+	// Create dots
+	int count = 0;
+	for (NSString* schemeName in schemesList) {
+		
+		NSString * schemeString = [NSString stringWithFormat:@"%@://",schemeName];
+		BOOL installed = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:schemeString]];
+		
+		UIView * schemeView = [[UIView alloc] initWithFrame:CGRectMake( (schemeIconTile * (count % 4)), ecosystemContainer.frame.size.height - ((count/4)+1) * schemeIconTile, schemeIconSize, schemeIconSize)];
+		schemeView.layer.cornerRadius = schemeIconSize/2;
+		schemeView.alpha = 0;
+		
+		if( installed ) {
+			if( [schemeName isEqualToString:applicationName] ){ schemeView.backgroundColor = [UIColor whiteColor]; }
+			else{ schemeView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.5]; }
+		}else {
+			schemeView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.15];
+		}
+		
+		[ecosystemContainer addSubview:schemeView];
+		count += 1;
+	}
+	
+	// Animate dots
+	count = 0;
+	for (UIView* targetView in [ecosystemContainer subviews] ) {
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:0.2];
+		[UIView setAnimationDelay:(0.08 * count)];
+		targetView.alpha = 1;
+		[UIView commitAnimations];
+		count += 1;
 	}
 }
 
 - (void) splashClose
 {
-	[blinker invalidate];
 	[self performSegueWithIdentifier: @"skip" sender: self];
 }
 
-- (IBAction)btnSplashSupport:(id)sender {
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:supportUrl]];
-}
-
--(void)setImage :(UIImageView*)viewName :(NSString*)imageName
+-(void)launchSupport
 {
-    NSString *imgFile = [[NSBundle mainBundle] pathForResource:imageName ofType:nil];
-    viewName.image = nil;
-	viewName.image = [UIImage imageWithContentsOfFile:imgFile];
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:supportUrl]];
 }
 
 -(void)audioPlayerSplash: (NSString *)filename;
@@ -102,7 +137,7 @@ AVAudioPlayer *audioPlayerSplash;
 	NSError* err;
 	audioPlayerSplash = [[AVAudioPlayer alloc] initWithContentsOfURL: [NSURL fileURLWithPath:resourcePath] error:&err];
 	
-	audioPlayerSplash.volume = 0.1;
+	audioPlayerSplash.volume = 0.5;
 	audioPlayerSplash.numberOfLoops = 0;
 	audioPlayerSplash.currentTime = 0;
 	
@@ -113,13 +148,7 @@ AVAudioPlayer *audioPlayerSplash;
 	}
 }
 
-- (NSUInteger) supportedInterfaceOrientations {
-    
-    return UIInterfaceOrientationMaskPortrait;
-    
-}
-
--(void)apiContact:(NSString*)source :(NSString*)method :(NSString*)term :(NSString*)value
+-(NSString*)apiContact:(NSString*)source :(NSString*)method :(NSString*)term :(NSString*)value
 {
 	NSString *post = [NSString stringWithFormat:@"values={\"term\":\"%@\",\"value\":\"%@\"}",term,value];
 	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -136,14 +165,13 @@ AVAudioPlayer *audioPlayerSplash;
 	NSURLResponse *response;
 	NSData *POSTReply = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
 	NSString *theReply = [[NSString alloc] initWithBytes:[POSTReply bytes] length:[POSTReply length] encoding: NSASCIIStringEncoding];
-	NSLog(@"& API  | %@: %@",method, theReply);
+	NSLog(@"&  API | %@: %@",method, theReply);
 	
-	return;
+	return theReply;
 }
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
+- (BOOL)prefersStatusBarHidden {
+	return YES;
 }
 
 @end
