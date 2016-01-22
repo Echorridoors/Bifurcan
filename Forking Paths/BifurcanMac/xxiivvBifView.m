@@ -51,7 +51,12 @@ NSString * const XXFilterChangedNotificaton = @"XXFilterChangedNotificaton";
     #if TARGET_OS_IPHONE
         return [[UIScreen mainScreen] scale];
     #else
-        return [[[self window] screen] backingScaleFactor];
+        float scale = [[[self window] screen] backingScaleFactor];
+        if (scale == 0.0)
+        {
+            scale = [[NSScreen mainScreen] backingScaleFactor];
+        }
+    return MAX(scale, 1.0);
     #endif
     
     return 1.0;
@@ -75,7 +80,11 @@ NSString * const XXFilterChangedNotificaton = @"XXFilterChangedNotificaton";
     if(!image) {
         NSBundle *programBundle = [NSBundle bundleForClass:[self class]];
         NSString *path = [programBundle pathForResource:name ofType:@"png"];
-       // NSLog(@"path%@",name);
+        if (!path)
+        {
+            path = [programBundle pathForResource:name ofType:@"tiff"];
+        }
+//        NSLog(@"path%@",name);
         image =  [[imageType alloc] initWithContentsOfFile:path];
     }
     //#if TARGET_OS_IPHONE
