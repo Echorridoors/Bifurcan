@@ -521,7 +521,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = xxiivv;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = XXIIVV;
 			};
 			buildConfigurationList = 03EE74421824CAE700AB60C0 /* Build configuration list for PBXProject "Bifurcan" */;
@@ -786,6 +786,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: David Mondou-Labbe";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -850,6 +851,7 @@
 				GCC_PREFIX_HEADER = "Forking Paths/Bifurcan-Prefix.pch";
 				INFOPLIST_FILE = "Forking Paths/Bifurcan-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xxiivv.Bifurcan;
 				PRODUCT_NAME = Bifurcan;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -866,6 +868,7 @@
 				GCC_PREFIX_HEADER = "Forking Paths/Bifurcan-Prefix.pch";
 				INFOPLIST_FILE = "Forking Paths/Bifurcan-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xxiivv.Bifurcan;
 				PRODUCT_NAME = Bifurcan;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -893,6 +896,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "BifurcanMac/BifurcanMac-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "xxiivv.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -916,6 +920,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "BifurcanMac/BifurcanMac-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "xxiivv.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -942,6 +947,7 @@
 				INFOPLIST_FILE = "BifurcanSaver/BifurcanSaver-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "xxiivv.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = saver;
@@ -965,6 +971,7 @@
 				INFOPLIST_FILE = "BifurcanSaver/BifurcanSaver-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "xxiivv.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = saver;

@@ -16,10 +16,7 @@ static NSString * const MyModuleName = @"com.XXIIVV.bifurcansaver";
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
-        
-        NSString *userDefaultsValuesPath;
-        
-        
+		
         ScreenSaverDefaults *defaults;
         
         defaults = [ScreenSaverDefaults defaultsForModuleWithName:MyModuleName];
